@@ -573,3 +573,43 @@ img {
     padding-inline: 12px !important;
   }
 }
+
+/* --- 9. Experience Section Responsiveness & Typography --- */
+.feature-three-left {
+  gap: clamp(24px, 3.5vw, 64px) !important;
+  align-items: flex-start !important;
+  flex: 1 1 auto;
+}
+
+.feature-three-item {
+  align-items: flex-start !important;
+}
+
+.feature-three-company {
+  width: clamp(140px, 14vw, 220px) !important;
+  min-width: 140px;
+}
+
+.feature-three-content h4 {
+  font-size: clamp(1.25rem, 2vw, 1.85rem) !important;
+}
+
+@media screen and (max-width: 991px) {
+  .feature-three-item {
+    flex-direction: column !important;
+    gap: 1.25rem !important;
+  }
+
+  .feature-three-left {
+    flex-wrap: wrap !important;
+    gap: 1rem !important;
+  }
+
+  .feature-three-company {
+    width: 100% !important;
+  }
+
+  .feature-three-date {
+    margin-left: 0 !important;
+  }
+}
