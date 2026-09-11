@@ -4,10 +4,10 @@ export default function ExperienceSection() {
       <div className="container tw-container-1800-px">
         <div className="row">
           <div className="col-xl-12">
-            <div className="feature-three-wrapper hover__widget">
+            <div className="feature-three-wrapper">
               {/* Experience 01: Gamotech Solutions */}
               <div
-                className="feature-three-single current hover__reveal-item"
+                className="feature-three-single current"
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-delay="200"
@@ -54,15 +54,11 @@ export default function ExperienceSection() {
                     </span>
                   </div>
                 </div>
-                <div
-                  className="hover__reveal-bg bg-img"
-                  data-background-image="/assets/images/thumbs/feature-three-thumb1.jpg"
-                ></div>
               </div>
 
               {/* Experience 02: Infosys Springboard */}
               <div
-                className="feature-three-single hover__reveal-item"
+                className="feature-three-single"
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-delay="200"
@@ -106,15 +102,11 @@ export default function ExperienceSection() {
                     </span>
                   </div>
                 </div>
-                <div
-                  className="hover__reveal-bg bg-img"
-                  data-background-image="/assets/images/thumbs/portfolio-two-thumb1.jpg"
-                ></div>
               </div>
 
               {/* Experience 03: Sumago Infotech */}
               <div
-                className="feature-three-single hover__reveal-item"
+                className="feature-three-single"
                 data-aos="fade-up"
                 data-aos-duration="1000"
                 data-aos-delay="200"
@@ -160,10 +152,6 @@ export default function ExperienceSection() {
                     </span>
                   </div>
                 </div>
-                <div
-                  className="hover__reveal-bg bg-img"
-                  data-background-image="/assets/images/thumbs/portfolio-two-thumb2.jpg"
-                ></div>
               </div>
             </div>
           </div>

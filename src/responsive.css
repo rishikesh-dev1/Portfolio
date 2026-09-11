@@ -613,3 +613,11 @@ img {
     margin-left: 0 !important;
   }
 }
+
+/* Disable hover reveal floating popup images in Experience & throughout */
+.hover__reveal-bg {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
