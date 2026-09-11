@@ -8,7 +8,11 @@ export default function Offcanvas() {
           <div className="tw-offcanvas-2-left-wrap d-flex justify-content-between align-items-center">
             <div className="twoffcanvas__logo">
               <a className="logo-1" href="/">
-                <img src="/assets/images/logo/logo.png" alt="Rishikesh Logo" />
+                <img
+                  src="https://res.cloudinary.com/dl6hpq7mm/image/upload/v1789102431/075d53bf-7cc7-4803-a1b0-5ff27ddfd5ed.png"
+                  alt="Rishikesh Logo"
+                  style={{ maxHeight: "44px", width: "auto", objectFit: "contain" }}
+                />
               </a>
             </div>
             <div className="tw-offcanvas-2-close d-md-none text-end">

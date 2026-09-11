@@ -104,7 +104,7 @@ export default function ServicesSection() {
                     <div className="service-three-thumb">
                       <a href="#services">
                         <img
-                          src="/assets/images/thumbs/service-three-ai.jpg"
+                          src="https://res.cloudinary.com/dl6hpq7mm/image/upload/v1789106510/1d70970e-992c-4894-ae0e-4f90cef6205c.png"
                           alt="AI Agents & LLM Solutions"
                         />
                       </a>
@@ -178,7 +178,7 @@ export default function ServicesSection() {
                     <div className="service-three-thumb">
                       <a href="#services">
                         <img
-                          src="/assets/images/thumbs/service-three-fullstack.jpg"
+                          src="https://res.cloudinary.com/dl6hpq7mm/image/upload/v1789106665/1bf2e047-1bed-4481-ab25-36261be99dbe.png"
                           alt="Full Stack & MERN Development"
                         />
                       </a>
@@ -244,74 +244,8 @@ export default function ServicesSection() {
                     <div className="service-three-thumb">
                       <a href="#services">
                         <img
-                          src="/assets/images/thumbs/service-three-cloud.jpg"
+                          src="https://res.cloudinary.com/dl6hpq7mm/image/upload/v1789106789/4561efa8-4a09-4ab2-ae24-22bcfc59a0d1.png"
                           alt="Cloud & DevOps Engineering"
-                        />
-                      </a>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Service 04 */}
-                <div
-                  className="service-three-single ms-auto"
-                  data-aos="fade-left"
-                  data-aos-duration="2000"
-                  data-aos-delay="500"
-                >
-                  <div className="service-three-item d-flex justify-content-between align-items-center">
-                    <div className="service-three-content d-flex tw-gap-14">
-                      <div>
-                        <span className="service-three-number text-white tw-text-xl d-inline-flex align-items-center tw-gap-3 lh-1 tw-mt-5 tw-transition-3">
-                          04
-                          <img
-                            className="tw-transition-3"
-                            src="/assets/images/icons/service-three-arrow.svg"
-                            alt="arrow"
-                          />
-                        </span>
-                      </div>
-                      <div>
-                        <div>
-                          <h2 className="service-three-title tw-text-15 text-white tw-mb-4">
-                            <a href="#services">Backend & REST API Engineering</a>
-                          </h2>
-                        </div>
-                        <div className="portfolio-list portfolio-two-list">
-                          <ul className="d-flex tw-gap-205 flex-wrap">
-                            <li>
-                              <a
-                                className="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-heading tw-transition-3"
-                                href="#services"
-                              >
-                                REST APIs
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                className="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-heading tw-transition-3"
-                                href="#services"
-                              >
-                                Python & Java
-                              </a>
-                            </li>
-                            <li>
-                              <a
-                                className="text-uppercase text-white tw-text-sm fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-heading tw-transition-3"
-                                href="#services"
-                              >
-                                SQL & Postman
-                              </a>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="service-three-thumb">
-                      <a href="#services">
-                        <img
-                          src="/assets/images/thumbs/service-three-backend.jpg"
-                          alt="Backend & REST API Engineering"
                         />
                       </a>
                     </div>
