@@ -432,51 +432,57 @@ img {
 
 .portfolio-three-wrapper {
   display: flex !important;
-  flex-wrap: wrap !important;
-  justify-content: space-between !important;
-  align-items: flex-start !important;
-  row-gap: clamp(20px, 2.5vw, 40px) !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  row-gap: 0 !important;
+  gap: 0 !important;
   position: relative !important;
   z-index: 2 !important; /* Ensures project cards scroll smoothly over the fixed 'works' title */
+  width: 100% !important;
 }
 
 .portfolio-three-item {
   width: calc(50% - clamp(16px, 1.8vw, 32px)) !important;
   max-width: calc(50% - clamp(16px, 1.8vw, 32px)) !important;
   box-sizing: border-box !important;
-  margin-bottom: 0 !important;
-}
-
-/* Zig-Zag Stagger: 
-   Card 1: Top-Left
-   Card 2: Top-Right (Shifted down for Zig-Zag)
-   Card 3: Bottom-Left (Lifted UP to sit closely below Card 1, removing empty void)
-   Card 4: Bottom-Right (Sits closely below Card 2, maintaining the Zig-Zag flow)
-*/
-.portfolio-three-item:nth-child(1) {
   margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
+}
+
+/* Sequential Alternating Zig-Zag (Exact Baseline Alignment: 
+   Left card finishes -> Right card starts on that EXACT same line -> finishes -> Left card starts on that EXACT same line)
+*/
+.portfolio-three-item:nth-child(odd) {
+  align-self: flex-start !important;
   margin-left: 0 !important;
   margin-right: auto !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
 }
 
-.portfolio-three-item:nth-child(2) {
-  margin-top: clamp(280px, 24vw, 380px) !important;
+.portfolio-three-item:nth-child(even) {
+  align-self: flex-end !important;
   margin-left: auto !important;
   margin-right: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
 }
 
-/* Card 3: Moderately pulled up so it starts cleanly below Card 2 (not above it, and without a giant gap) */
-.portfolio-three-item:nth-child(3) {
-  margin-top: clamp(-160px, -10vw, -110px) !important;
-  margin-left: 0 !important;
-  margin-right: auto !important;
-}
-
-/* Card 4: Sits below Card 3 with the exact same progressive zig-zag step */
-.portfolio-three-item:nth-child(4) {
-  margin-top: clamp(200px, 18vw, 300px) !important;
-  margin-left: auto !important;
-  margin-right: 0 !important;
+.portfolio-three-item:nth-child(1),
+.portfolio-three-item:nth-child(2),
+.portfolio-three-item:nth-child(3),
+.portfolio-three-item:nth-child(4),
+.portfolio-three-item:nth-child(5) {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  margin-block-start: 0 !important;
+  margin-block-end: 0 !important;
 }
 
 /* Counter / CTA button placed cleanly at the bottom center */
@@ -485,7 +491,8 @@ img {
   position: static !important;
   display: flex !important;
   justify-content: center !important;
-  margin-top: clamp(50px, 6vw, 90px) !important;
+  align-self: center !important;
+  margin-top: clamp(40px, 5vw, 80px) !important;
   margin-bottom: 1rem !important;
   z-index: 2;
 }
@@ -499,16 +506,21 @@ img {
   .portfolio-three-item {
     width: 100% !important;
     max-width: 100% !important;
+    align-self: stretch !important;
     margin-top: 0 !important;
     margin-bottom: 1.5rem !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .portfolio-three-item:nth-child(1),
   .portfolio-three-item:nth-child(2),
   .portfolio-three-item:nth-child(3),
   .portfolio-three-item:nth-child(4),
+  .portfolio-three-item:nth-child(5),
   .portfolio-three-item:nth-child(even),
   .portfolio-three-item:nth-child(odd) {
+    align-self: stretch !important;
     margin-top: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
@@ -620,4 +632,169 @@ img {
   opacity: 0 !important;
   visibility: hidden !important;
   pointer-events: none !important;
+}
+
+/* Rich Success Modal Animations */
+@keyframes modalOverlayFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalContentPopIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.9) translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Certificate Cards Equal Sizing, Smooth Scrolling & Manual Drag */
+.testimonial-three-active {
+  cursor: grab !important;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.testimonial-three-active:active {
+  cursor: grabbing !important;
+}
+
+.testimonial-three-active .swiper-wrapper {
+  display: flex !important;
+  align-items: stretch !important;
+}
+
+.testimonial-three-active.is-auto-scrolling .swiper-wrapper {
+  transition-timing-function: linear !important;
+}
+
+.testimonial-three-active:not(.is-auto-scrolling) .swiper-wrapper {
+  transition-timing-function: cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+/* Side Navigation Buttons (Floating, Prominent, Easy Click) */
+.cert-nav-btn {
+  position: absolute !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 52px !important;
+  height: 52px !important;
+  border-radius: 50% !important;
+  background: rgba(18, 18, 24, 0.92) !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  border: 1.5px solid rgba(255, 107, 0, 0.6) !important;
+  color: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 24px !important;
+  z-index: 25 !important;
+  cursor: pointer !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45) !important;
+  transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+.cert-nav-prev {
+  left: -24px !important;
+}
+
+.cert-nav-next {
+  right: -24px !important;
+}
+
+.cert-nav-btn:hover {
+  background: var(--main-two-600, #ff6b00) !important;
+  border-color: var(--main-two-600, #ff6b00) !important;
+  color: #ffffff !important;
+  transform: translateY(-50%) scale(1.15) !important;
+  box-shadow: 0 10px 30px rgba(255, 107, 0, 0.6) !important;
+}
+
+.cert-nav-btn:active {
+  transform: translateY(-50%) scale(0.94) !important;
+}
+
+@media screen and (max-width: 991px) {
+  .cert-nav-prev {
+    left: -12px !important;
+  }
+  .cert-nav-next {
+    right: -12px !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .cert-nav-btn {
+    width: 42px !important;
+    height: 42px !important;
+    font-size: 20px !important;
+  }
+  .cert-nav-prev {
+    left: -8px !important;
+  }
+  .cert-nav-next {
+    right: -8px !important;
+  }
+}
+
+.testimonial-three-active .swiper-slide {
+  height: auto !important;
+  display: flex !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+.testimonial-three-active .testimonial-three-wrapper {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  box-sizing: border-box !important;
+  cursor: grab !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+}
+
+.testimonial-three-active .testimonial-three-wrapper:active {
+  cursor: grabbing !important;
+}
+
+.testimonial-three-active .testimonial-three-thumb {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: 185px !important;
+  flex-shrink: 0 !important;
+}
+
+.testimonial-three-active .testimonial-three-content {
+  width: 100% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: space-between !important;
+  flex: 1 !important;
+}
+
+@media screen and (max-width: 767px) {
+  .testimonial-three-active .testimonial-three-wrapper {
+    padding: 16px !important;
+  }
+  .testimonial-three-active .testimonial-three-thumb {
+    height: 170px !important;
+  }
+}
+
+/* Route Navigation & AOS Visibility Safeguard */
+[data-aos].aos-animate {
+  opacity: 1 !important;
+  transform: none !important;
+  visibility: visible !important;
 }

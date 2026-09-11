@@ -7,16 +7,28 @@ export default function Offcanvas() {
         <div className="tw-offcanvas-2-left left-box">
           <div className="tw-offcanvas-2-left-wrap d-flex justify-content-between align-items-center">
             <div className="twoffcanvas__logo">
-              <a className="logo-1" href="/">
+              <a
+                className="logo-1"
+                href="#/"
+                onClick={() => {
+                  document.querySelector('.tw-offcanvas-2-area')?.classList.remove('opened');
+                  window.location.hash = '#/';
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                }}
+              >
                 <img
-                  src="https://res.cloudinary.com/dl6hpq7mm/image/upload/v1789102431/075d53bf-7cc7-4803-a1b0-5ff27ddfd5ed.png"
+                  src="https://res.cloudinary.com/dl6hpq7mm/image/upload/v1789125933/4985a757-e25e-4bc2-83fb-c06fc749bfe8.png"
                   alt="Rishikesh Logo"
                   style={{ maxHeight: "44px", width: "auto", objectFit: "contain" }}
                 />
               </a>
             </div>
             <div className="tw-offcanvas-2-close d-md-none text-end">
-              <button className="tw-offcanvas-2-close-btn tw-offcanvas-2-close-btn" aria-label="Close menu">
+              <button
+                className="tw-offcanvas-2-close-btn tw-offcanvas-2-close-btn"
+                aria-label="Close menu"
+                onClick={() => document.querySelector('.tw-offcanvas-2-area')?.classList.remove('opened')}
+              >
                 <span className="text">
                   <span className="text-white">close</span>
                 </span>
@@ -48,12 +60,58 @@ export default function Offcanvas() {
             </div>
           </div>
           <div className="tw-main-menu-mobile menu-hover-active counter-row">
-            <nav></nav>
+            <nav>
+              <ul>
+                <li>
+                  <a
+                    href="#/"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.querySelector('.tw-offcanvas-2-area')?.classList.remove('opened');
+                      window.location.hash = '#/';
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    <span>HOME</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#/works"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.querySelector('.tw-offcanvas-2-area')?.classList.remove('opened');
+                      window.location.hash = '#/works';
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    <span>WORKS</span>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="#/contact"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.querySelector('.tw-offcanvas-2-area')?.classList.remove('opened');
+                      window.location.hash = '#/contact';
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    <span>CONTACT</span>
+                  </a>
+                </li>
+              </ul>
+            </nav>
           </div>
         </div>
         <div className="tw-offcanvas-2-right right-box d-none d-md-block p-relative">
           <div className="tw-offcanvas-2-close text-end">
-            <button className="tw-offcanvas-2-close-btn" aria-label="Close menu">
+            <button
+              className="tw-offcanvas-2-close-btn"
+              aria-label="Close menu"
+              onClick={() => document.querySelector('.tw-offcanvas-2-area')?.classList.remove('opened')}
+            >
               <span className="text">
                 <span>close</span>
               </span>

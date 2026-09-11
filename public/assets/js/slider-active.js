@@ -111,33 +111,6 @@
 
   ////////////////////////////////////////////////////
   // 06. Testimonial Three Js
-  var slider = new Swiper(".testimonial-three-active", {
-    slidesPerView: 2,
-    spaceBetween: 10,
-    autoplay: true,
-    speed: 1500,
-    loop: true,
-    breakpoints: {
-      1200: {
-        slidesPerView: 2,
-      },
-      992: {
-        slidesPerView: 1,
-      },
-      768: {
-        slidesPerView: 1,
-      },
-      576: {
-        slidesPerView: 1,
-      },
-      0: {
-        slidesPerView: 1,
-      },
-    },
-    // Navigation arrows
-    navigation: {
-      nextEl: ".slider-next",
-      prevEl: ".slider-prev",
-    },
-  });
+  // Controlled exclusively by React CertificatesSection component to handle
+  // hover freeze, instant pause, and side button navigation cleanly without race conditions.
 })(jQuery);

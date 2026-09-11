@@ -5,7 +5,14 @@ export default function Header() {
         <nav className="d-flex align-items-center justify-content-between position-relative">
           {/* Logo Start */}
           <div className="header-three-logo tw-rounded-md">
-            <a href="/" className="link">
+            <a
+              href="#/"
+              className="link"
+              onClick={() => {
+                window.location.hash = '#/';
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+            >
               <img
                 src="https://res.cloudinary.com/dl6hpq7mm/image/upload/v1789102431/075d53bf-7cc7-4803-a1b0-5ff27ddfd5ed.png"
                 alt="Rishikesh Logo"
@@ -94,6 +101,7 @@ export default function Header() {
               </button>
             </div>
             {/* Menu Toggle Button End */}
+
 
             {/* Download CV Button Start */}
             <div className="header-three-button d-none d-md-block">
