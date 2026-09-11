@@ -1,0 +1,8 @@
+@import "tailwindcss";
+@import "./responsive.css";
+
+/* Preserve template utility collisions: template uses tw-* already in main.css */
+#root {
+  min-height: 100%;
+}
+
