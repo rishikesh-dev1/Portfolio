@@ -798,3 +798,44 @@ img {
   transform: none !important;
   visibility: visible !important;
 }
+
+/* Custom Welcome Preloader Text */
+.preloader .preloader-heading .welcome-load-text {
+  font-size: clamp(20px, 3.2vw, 34px) !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  letter-spacing: clamp(1px, 0.4vw, 3px) !important;
+  font-family: var(--body-font) !important;
+  text-transform: uppercase !important;
+  text-align: center !important;
+  max-width: 90vw !important;
+  line-height: 1.35 !important;
+  z-index: 20 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: 8px 12px !important;
+}
+
+.welcome-load-text .highlight-name {
+  color: var(--main-two-600, #ff6b00) !important;
+  text-shadow: 0 0 24px rgba(255, 107, 0, 0.45) !important;
+}
+
+.welcome-load-text span {
+  display: inline-block;
+  animation: welcomePulse 1.8s infinite ease-in-out alternate !important;
+}
+
+@keyframes welcomePulse {
+  0% {
+    opacity: 0.85;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-2px);
+  }
+}

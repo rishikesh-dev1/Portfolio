@@ -10,14 +10,9 @@ export default function UIElements() {
           ></path>
         </svg>
         <div className="preloader-heading">
-          <div className="load-text">
-            <span>L</span>
-            <span>o</span>
-            <span>a</span>
-            <span>d</span>
-            <span>i</span>
-            <span>n</span>
-            <span>g</span>
+          <div className="load-text welcome-load-text">
+            <span>Welcome to</span>
+            <span className="highlight-name">Rishikesh Portfolio</span>
           </div>
         </div>
       </div>
