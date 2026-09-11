@@ -8,78 +8,126 @@ export default function PortfolioSection() {
         <div className="row">
           <div className="col-xl-12">
             <div className="portfolio-three-wrapper d-flex justify-content-between flex-wrap align-items-start position-relative z-1">
-              {/* Project 1: RestroBazaar */}
+              {/* Project 1: Aanvitha Technologies */}
               <div className="portfolio-three-item tw-rounded-lg tw-mb-705 portfolio-wrapper">
-                <div className="portfolio-three-wrap d-flex justify-content-between flex-wrap row-gap-2">
-                  <div className="tw-mb-6">
+                <div className="portfolio-three-wrap">
+                  <div className="d-flex justify-content-between align-items-start gap-3 tw-mb-4">
                     <div>
                       <span className="text-main-two-600 tw-text-sm fw-semibold text-uppercase tw-mb-2 d-inline-block">
                         Freelance — Live Project
                       </span>
-                      <h2 className="tw-text-605 fw-medium tw-mb-4">
-                        <a className="hover-text-main-two-600" href="#portfolio">
-                          RestroBazaar
+                      <h2 className="tw-text-605 fw-medium mb-0">
+                        <a
+                          className="hover-text-main-two-600"
+                          href="https://www.aanvitha.tech"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Aanvitha Technologies
                         </a>
                       </h2>
                     </div>
-                    <div className="portfolio-three-list portfolio-list">
-                      <ul className="d-flex tw-gap-205 flex-wrap">
-                        <li>
-                          <a
-                            className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                            href="#portfolio"
-                          >
-                            React.js
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                            href="#portfolio"
-                          >
-                            Node.js
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                            href="#portfolio"
-                          >
-                            MongoDB
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                            href="#portfolio"
-                          >
-                            AWS
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="portfolio-three-button">
+                    <div className="portfolio-three-button flex-shrink-0">
                       <a
                         className="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white"
-                        href="#portfolio"
-                        aria-label="View Project"
+                        href="https://www.aanvitha.tech"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="View Aanvitha Technologies"
                       >
                         <i className="ph ph-arrow-up-right"></i>
                       </a>
                     </div>
+                  </div>
+                  <div className="portfolio-three-list portfolio-list tw-mb-6">
+                    <ul className="d-flex tw-gap-205 flex-wrap">
+                      <li>
+                        <a
+                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
+                          href="https://www.aanvitha.tech"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          React 19
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
+                          href="https://www.aanvitha.tech"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          JavaScript
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
+                          href="https://www.aanvitha.tech"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Vite
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
+                          href="https://www.aanvitha.tech"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          CSS3
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
+                          href="https://www.aanvitha.tech"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Google Gemini API
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
+                          href="https://www.aanvitha.tech"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Webhooks
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
+                          href="https://www.aanvitha.tech"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          CSV
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
                 <div
                   className="portfolio-thumb not-hide-cursor fw-bold mb-0 tw-rounded-lg"
                   data-cursor="View"
                 >
-                  <a className="d-block cursor-hide tw-rounded-lg" href="#portfolio">
+                  <a
+                    className="d-block cursor-hide tw-rounded-lg"
+                    href="https://www.aanvitha.tech"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       className="w-100 tw-rounded-lg"
-                      src="/assets/images/thumbs/portfolio-three-thumb2.jpg"
-                      alt="RestroBazaar Multi-vendor eCommerce"
+                      src="https://res.cloudinary.com/dl6hpq7mm/image/upload/v1789108842/25ebee3a-9fce-4d70-bbd5-73e5113ba981.png"
+                      alt="Aanvitha Technologies — Enterprise AI, Fintech & SaaS Platform"
                     />
                   </a>
                 </div>
@@ -87,145 +135,199 @@ export default function PortfolioSection() {
 
               {/* Project 2: AKHD Media */}
               <div className="portfolio-three-item tw-rounded-lg tw-mb-705 portfolio-wrapper">
-                <div className="portfolio-three-wrap d-flex justify-content-between flex-wrap row-gap-2">
-                  <div className="tw-mb-6">
+                <div className="portfolio-three-wrap">
+                  <div className="d-flex justify-content-between align-items-start gap-3 tw-mb-4">
                     <div>
                       <span className="text-main-two-600 tw-text-sm fw-semibold text-uppercase tw-mb-2 d-inline-block">
                         Freelance — Live Project
                       </span>
-                      <h2 className="tw-text-605 fw-medium tw-mb-4">
-                        <a className="hover-text-main-two-600" href="#portfolio">
+                      <h2 className="tw-text-605 fw-medium mb-0">
+                        <a
+                          className="hover-text-main-two-600"
+                          href="https://www.akhdmedia.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
                           AKHD Media
                         </a>
                       </h2>
                     </div>
-                    <div className="portfolio-three-list portfolio-list">
-                      <ul className="d-flex tw-gap-205 flex-wrap">
-                        <li>
-                          <a
-                            className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                            href="#portfolio"
-                          >
-                            MERN Stack
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                            href="#portfolio"
-                          >
-                            Amazon S3
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                            href="#portfolio"
-                          >
-                            AWS Hosting
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="portfolio-three-button">
+                    <div className="portfolio-three-button flex-shrink-0">
                       <a
                         className="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white"
-                        href="#portfolio"
-                        aria-label="View Project"
+                        href="https://www.akhdmedia.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="View AKHD Media"
                       >
                         <i className="ph ph-arrow-up-right"></i>
                       </a>
                     </div>
+                  </div>
+                  <div className="portfolio-three-list portfolio-list tw-mb-6">
+                    <ul className="d-flex tw-gap-205 flex-wrap">
+                      <li>
+                        <a
+                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
+                          href="https://www.akhdmedia.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          MERN Stack
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
+                          href="https://www.akhdmedia.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Amazon S3
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
+                          href="https://www.akhdmedia.com"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          AWS Hosting
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
                 <div
                   className="portfolio-thumb not-hide-cursor fw-bold mb-0 tw-rounded-lg"
                   data-cursor="View"
                 >
-                  <a className="d-block cursor-hide tw-rounded-lg" href="#portfolio">
+                  <a
+                    className="d-block cursor-hide tw-rounded-lg"
+                    href="https://www.akhdmedia.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       className="w-100 tw-rounded-lg"
-                      src="/assets/images/thumbs/portfolio-three-thumb1.jpg"
+                      src="https://res.cloudinary.com/dl6hpq7mm/image/upload/v1789108941/1a7acce9-9b3d-4d6f-adb2-2032648be971.png"
                       alt="AKHD Media Video Platform"
                     />
                   </a>
                 </div>
               </div>
 
-              {/* Project 3: Smart Agriculture */}
+              {/* Project 3: RestroBazaar */}
               <div className="portfolio-three-item tw-rounded-lg tw-mb-705 portfolio-wrapper">
-                <div className="portfolio-three-wrap d-flex justify-content-between flex-wrap row-gap-2">
-                  <div className="tw-mb-6">
+                <div className="portfolio-three-wrap">
+                  <div className="d-flex justify-content-between align-items-start gap-3 tw-mb-4">
                     <div>
                       <span className="text-main-two-600 tw-text-sm fw-semibold text-uppercase tw-mb-2 d-inline-block">
-                        Academic & IoT Project
+                        Freelance — Live Project
                       </span>
-                      <h2 className="tw-text-605 fw-medium tw-mb-4">
-                        <a className="hover-text-main-two-600" href="#portfolio">
-                          Smart Agriculture
+                      <h2 className="tw-text-605 fw-medium mb-0">
+                        <a
+                          className="hover-text-main-two-600"
+                          href="https://restrobazaar.in/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          RestroBazaar
                         </a>
                       </h2>
                     </div>
-                    <div className="portfolio-three-list portfolio-list">
-                      <ul className="d-flex tw-gap-205 flex-wrap">
-                        <li>
-                          <a
-                            className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                            href="#portfolio"
-                          >
-                            Python
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                            href="#portfolio"
-                          >
-                            IoT & Sensors
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                            href="#portfolio"
-                          >
-                            ML Models (85%)
-                          </a>
-                        </li>
-                        <li>
-                          <a
-                            className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                            href="#portfolio"
-                          >
-                            AI Chatbot
-                          </a>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div>
-                    <div className="portfolio-three-button">
+                    <div className="portfolio-three-button flex-shrink-0">
                       <a
                         className="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white"
-                        href="#portfolio"
-                        aria-label="View Project"
+                        href="https://restrobazaar.in/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="View RestroBazaar"
                       >
                         <i className="ph ph-arrow-up-right"></i>
                       </a>
                     </div>
+                  </div>
+                  <div className="portfolio-three-list portfolio-list tw-mb-6">
+                    <ul className="d-flex tw-gap-205 flex-wrap">
+                      <li>
+                        <a
+                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
+                          href="https://restrobazaar.in/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          React.js
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
+                          href="https://restrobazaar.in/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Node.js
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
+                          href="https://restrobazaar.in/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Express.js
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
+                          href="https://restrobazaar.in/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          MongoDB
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
+                          href="https://restrobazaar.in/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          AWS
+                        </a>
+                      </li>
+                      <li>
+                        <a
+                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
+                          href="https://restrobazaar.in/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Admin & Vendor Panels
+                        </a>
+                      </li>
+                    </ul>
                   </div>
                 </div>
                 <div
                   className="portfolio-thumb not-hide-cursor fw-bold mb-0 tw-rounded-lg"
                   data-cursor="View"
                 >
-                  <a className="d-block cursor-hide tw-rounded-lg" href="#portfolio">
+                  <a
+                    className="d-block cursor-hide tw-rounded-lg"
+                    href="https://restrobazaar.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <img
                       className="w-100 tw-rounded-lg"
-                      src="/assets/images/thumbs/portfolio-three-thumb3.jpg"
-                      alt="Smart Agriculture IoT and ML"
+                      src="https://res.cloudinary.com/dl6hpq7mm/image/upload/v1789109949/755cad8d-f4f5-4ecf-8533-bc532d7c7b40.png"
+                      alt="RestroBazaar — Multi-Vendor eCommerce Platform"
                     />
                   </a>
                 </div>
