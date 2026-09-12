@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import WorksPage from './pages/WorksPage';
 import ContactPage from './pages/ContactPage';
+import ChatBot from './components/ChatBot';
 
 export default function App() {
   useTemplateEffects();
@@ -113,6 +114,7 @@ export default function App() {
           <Footer isContactPage={currentRoute === 'contact'} />
         </div>
       </div>
+      <ChatBot />
     </>
   );
 }
