@@ -20,7 +20,8 @@
   opacity: 1 !important;
   width: 100% !important;
   height: auto !important;
-  object-fit: cover !important;
+  max-height: none !important;
+  object-fit: unset !important;
 }
 
 /* Neutralize any legacy clip animation hiding */
@@ -44,4 +45,6 @@
   max-width: 100% !important;
   display: block !important;
 }
+
+/* Hero title size is controlled in responsive.css */
 

@@ -12,8 +12,8 @@ export default function AboutSection() {
               </div>
             </div>
           </div>
-          <div className="row align-items-center">
-            <div className="col-xl-6 col-lg-6 col-md-12 col-12 mb-4 mb-xl-0">
+          <div className="row align-items-start about-three-bio-row g-4 g-xl-5">
+            <div className="col-xl-6 col-lg-6 col-md-12 col-12">
               <div
                 className="about-three-thumb w-100 tw-rounded-lg overflow-hidden position-relative"
                 style={{
@@ -31,8 +31,6 @@ export default function AboutSection() {
                   style={{
                     width: '100%',
                     height: 'auto',
-                    maxHeight: '620px',
-                    objectFit: 'cover',
                     display: 'block',
                     borderRadius: '16px',
                     visibility: 'visible',
@@ -41,7 +39,7 @@ export default function AboutSection() {
                 />
               </div>
             </div>
-            <div className="col-xl-6">
+            <div className="col-xl-6 col-lg-6 col-md-12 col-12">
               <div
                 className="about-three-right"
                 data-aos="fade-up"
@@ -49,7 +47,7 @@ export default function AboutSection() {
                 data-aos-delay="300"
               >
                 <div>
-                  <p className="tw-text-xl tw-mb-10">
+                  <p className="tw-text-xl tw-mb-10 about-three-bio-lead">
                     I am Rishikesh Wakchaure, an Information Technology engineering graduate from Amrutvahini College of Engineering, SPPU (CGPA: 7.89 / 10.00), dedicated to full-stack engineering, cloud architectures, and generative AI systems.
                   </p>
                   <p className="tw-text-xl tw-mb-10">

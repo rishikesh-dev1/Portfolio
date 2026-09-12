@@ -88,7 +88,7 @@ img {
   }
 }
 
-/* --- 3. Hero Watermark Title & 3D Layered Stage --- */
+/* --- 3. Hero: photo, line+dot, text below line (template layout restored) --- */
 .banner-three-hero-stage {
   position: relative !important;
   width: 100% !important;
@@ -98,11 +98,10 @@ img {
   align-items: center !important;
   justify-content: flex-start !important;
   min-height: clamp(260px, 42vw, 640px) !important;
-  margin-bottom: clamp(1rem, 2vw, 2.5rem) !important;
+  margin-bottom: 0 !important;
   padding-top: 0 !important;
 }
 
-/* "DEVELOPER" Title - positioned up, behind the head with upper part rising above */
 .banner-three-hero-stage .banner-three-title {
   position: relative !important;
   z-index: 1 !important;
@@ -116,9 +115,9 @@ img {
   user-select: none !important;
   color: #000000 !important;
   pointer-events: none !important;
+  text-transform: uppercase !important;
 }
 
-/* Photo of Rishikesh - positioned slightly over the lower portion of the title */
 .banner-three-hero-stage .banner-three-man {
   position: absolute !important;
   left: 50% !important;
@@ -143,46 +142,91 @@ img {
   -webkit-mask-image: linear-gradient(to bottom, black 88%, transparent 100%);
 }
 
+/* Line + orange dot must stay visible and above the center text */
+.banner-three-line-shape {
+  display: block !important;
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: min(720px, 52%) !important;
+  max-width: 100% !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.banner-three-line-shape img {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Orange pulse circle removed — was overlapping "INTELLIGENT" */
+.banner-three-carcel-shape {
+  display: none !important;
+}
+
 /* --- 4. Desktop View (min-width: 1200px) --- */
 @media screen and (min-width: 1200px) {
   .banner-three-area {
-    padding-top: clamp(150px, 12vw, 210px) !important;
-    padding-bottom: clamp(60px, 6vw, 120px) !important;
+    padding-top: clamp(96px, 7.5vw, 128px) !important;
+    padding-bottom: clamp(48px, 5vw, 96px) !important;
   }
 
   .banner-three-hero-stage {
-    min-height: clamp(340px, 36vw, 560px) !important;
-    margin-bottom: clamp(0.75rem, 1.2vw, 1.5rem) !important;
+    min-height: clamp(300px, 32vw, 500px) !important;
   }
 
   .banner-three-hero-stage .banner-three-title {
-    font-size: clamp(3rem, 21.2vw, 32rem) !important;
-    margin-top: clamp(-20px, -1.5vw, -8px) !important;
+    font-size: clamp(4.25rem, 22.5vw, 33rem) !important;
+    margin-top: clamp(-12px, -0.8vw, -4px) !important;
   }
 
-  /* Photo brought down closer to the center headline */
   .banner-three-hero-stage .banner-three-man {
-    top: clamp(95px, 9.2vw, 160px) !important;
+    top: clamp(100px, 9.5vw, 160px) !important;
   }
 
   .banner-three-hero-stage .banner-three-man img {
-    height: clamp(440px, 46vw, 700px) !important;
+    height: clamp(400px, 42vw, 640px) !important;
   }
 
   .banner-three-wrap {
-    margin-top: clamp(-50px, -3.8vw, -20px) !important;
+    margin-top: clamp(-70px, -5vw, -28px) !important;
     position: relative !important;
     z-index: 3 !important;
+    /* Space under cards for: small gap → line+dot → text */
+    --hero-band: clamp(110px, 9vw, 140px);
   }
 
-  /* Center Headline & CTA - positioned cleanly lower to prevent overlapping photo */
-  .banner-three-center {
-    margin-bottom: 0 !important;
-    transform: translateY(clamp(35px, 3.8vw, 75px)) !important;
+  .banner-three-left,
+  .banner-three-right {
+    margin-block-end: var(--hero-band) !important;
   }
 
+  /* Line sits in the band, just above the center text */
   .banner-three-line-shape {
-    inset-block-end: clamp(6%, 5vw, 12%) !important;
+    inset-block-end: auto !important;
+    bottom: calc(var(--hero-band) - 18px) !important;
+    top: auto !important;
+    width: min(720px, 52%) !important;
+  }
+
+  /* Headline always under the line */
+  .banner-three-center {
+    margin: 0 !important;
+    padding-top: 0 !important;
+    transform: none !important;
+    align-self: flex-end !important;
+    max-width: min(575px, 36vw) !important;
+    position: relative !important;
+    z-index: 2 !important;
+  }
+
+  .banner-three-center-title {
+    margin-block-start: 0 !important;
+    margin-block-end: clamp(14px, 1.2vw, 20px) !important;
   }
 }
 
@@ -194,12 +238,11 @@ img {
   }
 
   .banner-three-hero-stage {
-    min-height: clamp(285px, 68vw, 460px) !important;
-    margin-bottom: 0.5rem !important;
+    min-height: clamp(240px, 58vw, 400px) !important;
   }
 
   .banner-three-hero-stage .banner-three-title {
-    font-size: clamp(2.8rem, 19.5vw, 8.5rem) !important;
+    font-size: clamp(3.6rem, 24vw, 12rem) !important;
     margin-top: clamp(-24px, -3.5vw, -12px) !important;
   }
 
@@ -208,8 +251,8 @@ img {
   }
 
   .banner-three-hero-stage .banner-three-man img {
-    height: clamp(275px, 66vw, 440px) !important;
-    max-width: min(78vw, 440px) !important;
+    height: clamp(250px, 60vw, 400px) !important;
+    max-width: min(78vw, 400px) !important;
     width: auto !important;
   }
 
@@ -217,19 +260,33 @@ img {
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
-    gap: 1.75rem !important;
+    gap: 0 !important;
     width: 100% !important;
-    margin-top: 0.5rem !important;
+    margin-top: clamp(-28px, -5vw, -8px) !important;
     position: relative !important;
     z-index: 3 !important;
   }
 
-  /* Center Headline & CTA */
-  .banner-three-center {
+  /* Keep line+dot visible on mobile (template hid it) */
+  .banner-three-line-shape {
+    display: block !important;
+    position: relative !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    inset-block-end: auto !important;
+    transform: none !important;
     order: 1;
+    width: min(280px, 70vw) !important;
+    margin: clamp(4px, 1.5vw, 12px) auto 0 auto !important;
+  }
+
+  .banner-three-center {
+    order: 2;
     width: 100% !important;
     max-width: 600px !important;
-    margin: 0 auto !important;
+    margin: clamp(14px, 2.5vw, 22px) auto 0 auto !important;
+    padding-top: 0 !important;
     transform: none !important;
   }
 
@@ -239,20 +296,16 @@ img {
     font-size: clamp(1.35rem, 4.5vw, 2.2rem) !important;
     max-width: 100% !important;
     line-height: 1.3 !important;
-    margin: 0.75rem auto 1.25rem auto !important;
+    margin: 0 auto 1.25rem auto !important;
   }
 
-  .banner-three-line-shape {
-    display: none !important;
-  }
-
-  /* Left Bio Card - Un-hide & Format for Mobile/Tablet */
   .banner-three-left {
     display: block !important;
-    order: 2;
+    order: 3;
     max-width: min(540px, 100%) !important;
     width: 100% !important;
     margin-block-end: 0 !important;
+    margin-top: 1.75rem !important;
     padding: 24px 20px !important;
     box-sizing: border-box !important;
   }
@@ -273,13 +326,13 @@ img {
     margin-bottom: 0.5rem !important;
   }
 
-  /* Right Stats Card - Un-hide & Format for Mobile/Tablet */
   .banner-three-right {
     display: block !important;
-    order: 3;
+    order: 4;
     max-width: min(540px, 100%) !important;
     width: 100% !important;
     margin-block-end: 0 !important;
+    margin-top: 1.75rem !important;
     padding: 24px 20px !important;
     box-sizing: border-box !important;
   }
@@ -302,6 +355,53 @@ img {
   word-break: normal !important;
   overflow-wrap: break-word !important;
   hyphens: auto;
+}
+
+/* Image top + bio first line share the same baseline */
+.about-three-bio-row {
+  align-items: flex-start !important;
+}
+
+.about-three-bio-row > [class*="col-"] {
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+.about-three-thumb {
+  margin-top: 0 !important;
+  margin-block-start: 0 !important;
+}
+
+.about-three-right {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.about-three-bio-lead {
+  margin-top: 0 !important;
+  margin-block-start: 0 !important;
+  padding-top: 0 !important;
+}
+
+.about-three-right > div:first-child > p:first-child {
+  margin-top: 0 !important;
+  margin-block-start: 0 !important;
+}
+
+@media screen and (max-width: 991px) {
+  .about-three-bio-row {
+    flex-direction: column !important;
+  }
+
+  .about-three-thumb {
+    margin-block-end: clamp(20px, 4vw, 32px) !important;
+    max-width: 100% !important;
+  }
+
+  .about-three-right .tw-text-xl {
+    font-size: clamp(1rem, 3.2vw, 1.25rem) !important;
+    line-height: 1.55 !important;
+  }
 }
 
 @media screen and (max-width: 767px) {

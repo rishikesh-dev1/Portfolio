@@ -12,10 +12,14 @@ export default function HeroSection() {
                     alt="Rishikesh Wakchaure"
                   />
                 </div>
-                <h1 className="banner-three-title text-black tw-mb-30">
-                  developer
+                <h1
+                  className="banner-three-title text-black mb-2"
+                  style={{ letterSpacing: '0.08em' }}
+                >
+                  engineer
                 </h1>
               </div>
+
               <div className="banner-three-wrap d-flex justify-content-between align-items-end position-relative z-1">
                 <div
                   className="banner-three-left tw-rounded-lg"
@@ -77,6 +81,8 @@ export default function HeroSection() {
                     </ul>
                   </div>
                 </div>
+
+                {/* Center: line+dot above, headline below — original template layout */}
                 <div
                   className="banner-three-center text-center"
                   data-aos="fade-up"
@@ -84,7 +90,8 @@ export default function HeroSection() {
                   data-aos-delay="200"
                 >
                   <h3 className="banner-three-center-title tw-text-120">
-                    Engineering Scalable Platforms, Cloud Systems & Intelligent AI Solutions.
+                    Engineering Scalable Platforms, Cloud Systems & Intelligent AI
+                    Solutions.
                   </h3>
                   <div className="banner-three-button">
                     <a
@@ -96,6 +103,7 @@ export default function HeroSection() {
                     </a>
                   </div>
                 </div>
+
                 <div
                   className="banner-three-right tw-rounded-lg"
                   data-aos="fade-up"
@@ -167,16 +175,14 @@ export default function HeroSection() {
                     </p>
                   </div>
                 </div>
-                <div className="banner-three-line-shape position-absolute start-50 translate-middle-x z-n1">
+
+                {/* Horizontal line above the center text */}
+                <div className="banner-three-line-shape position-absolute start-50 translate-middle-x">
                   <img
                     src="/assets/images/shapes/banner-three-shape.png"
-                    alt="shape"
+                    alt=""
+                    aria-hidden="true"
                   />
-                  <div className="banner-three-carcel-shape">
-                    <div>
-                      <span></span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>
