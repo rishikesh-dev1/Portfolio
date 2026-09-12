@@ -233,7 +233,7 @@ img {
 /* --- 5. Mobile & Tablet View (max-width: 1199px) --- */
 @media screen and (max-width: 1199px) {
   .banner-three-area {
-    padding-top: clamp(120px, 16vw, 160px) !important;
+    padding-top: clamp(78px, 12vw, 110px) !important;
     padding-bottom: 40px !important;
   }
 
@@ -243,11 +243,11 @@ img {
 
   .banner-three-hero-stage .banner-three-title {
     font-size: clamp(3.6rem, 24vw, 12rem) !important;
-    margin-top: clamp(-24px, -3.5vw, -12px) !important;
+    margin-top: clamp(-40px, -6vw, -22px) !important;
   }
 
   .banner-three-hero-stage .banner-three-man {
-    top: clamp(16px, 4vw, 40px) !important;
+    top: clamp(4px, 2vw, 24px) !important;
   }
 
   .banner-three-hero-stage .banner-three-man img {
