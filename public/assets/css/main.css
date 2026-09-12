@@ -9829,7 +9829,7 @@ body.tw-magic-cursor #magic-cursor {
   position: relative;
 }
 .tw-clip-anim .tw-anim-img {
-  opacity: 0;
+  opacity: 1;
   width: 100%;
   height: 100%;
 }

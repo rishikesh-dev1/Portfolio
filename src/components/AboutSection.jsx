@@ -12,19 +12,32 @@ export default function AboutSection() {
               </div>
             </div>
           </div>
-          <div className="row">
-            <div className="col-xl-6">
+          <div className="row align-items-center">
+            <div className="col-xl-6 col-lg-6 col-md-12 col-12 mb-4 mb-xl-0">
               <div
-                className="about-three-thumb w-100 tw-clip-anim tw-rounded-lg"
-                data-aos="fade-up"
-                data-aos-duration="1000"
-                data-aos-delay="200"
+                className="about-three-thumb w-100 tw-rounded-lg overflow-hidden position-relative"
+                style={{
+                  display: 'block',
+                  visibility: 'visible',
+                  opacity: 1,
+                  maxWidth: '100%',
+                }}
               >
                 <img
-                  className="tw-anim-img w-100 tw-rounded-lg"
-                  data-animate="true"
+                  className="w-100 tw-rounded-lg d-block"
                   src="https://res.cloudinary.com/dl6hpq7mm/image/upload/v1789093780/e43bc394-e3fc-4bcc-9d4f-3d59413c2049.png"
                   alt="Rishikesh Wakchaure - Full Stack Software Developer"
+                  loading="eager"
+                  style={{
+                    width: '100%',
+                    height: 'auto',
+                    maxHeight: '620px',
+                    objectFit: 'cover',
+                    display: 'block',
+                    borderRadius: '16px',
+                    visibility: 'visible',
+                    opacity: 1,
+                  }}
                 />
               </div>
             </div>

@@ -6,3 +6,29 @@
   min-height: 100%;
 }
 
+/* Ensure About photo is always 100% visible on all devices and screen sizes */
+.about-three-thumb {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+}
+
+.about-three-thumb img {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  width: 100% !important;
+  height: auto !important;
+  object-fit: cover !important;
+}
+
+/* Neutralize any legacy clip animation hiding */
+.tw-clip-anim,
+.tw-clip-anim .tw-anim-img,
+.tw-anim-img {
+  opacity: 1 !important;
+  visibility: visible !important;
+  display: block !important;
+}
+
