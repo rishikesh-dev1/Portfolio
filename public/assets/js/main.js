@@ -29,7 +29,7 @@
   ////////////////////////////////////////////////////
   // 01. PreLoader Js
   function initPreloader() {
-    if (window.__preloaderStarted) return;
+    if (window.__preloaderStarted || window.__preloaderDismissed) return;
     window.__preloaderStarted = true;
     if (typeof gsap === "undefined") {
       const el = document.querySelector(".preloader");
