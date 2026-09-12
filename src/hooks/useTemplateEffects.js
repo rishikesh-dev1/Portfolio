@@ -69,7 +69,7 @@ export function useTemplateEffects() {
       }
 
       // Safety: never stay stuck on LOADING
-      window.setTimeout(hidePreloaderFallback, 4500);
+      window.setTimeout(hidePreloaderFallback, 1800);
     }, 50);
 
     return () => {

@@ -53,7 +53,7 @@ export default function AboutSection() {
                     I am Rishikesh Wakchaure, an Information Technology engineering graduate from Amrutvahini College of Engineering, SPPU (CGPA: 7.89 / 10.00), dedicated to full-stack engineering, cloud architectures, and generative AI systems.
                   </p>
                   <p className="tw-text-xl tw-mb-10">
-                    Currently working as a Software Developer Intern at Gamotech Solutions Pvt. Ltd., I develop and maintain reusable React.js UI components, design and integrate RESTful APIs with Node.js & Express.js, and build AI agents and chatbot solutions with LLM APIs for automated business workflows and CRM operations.
+                    Currently working as an Associate Software Developer at Gamotech Solutions Pvt. Ltd., I develop and maintain reusable React.js UI components, design and integrate RESTful APIs with Node.js & Express.js, and build AI agents and chatbot solutions with LLM APIs for automated business workflows and CRM operations.
                   </p>
                   <p className="tw-text-xl tw-mb-10">
                     Previously at Infosys Springboard, I gained deep full-stack experience in end-to-end web applications, databases, and Git collaboration. Certified as an AWS Cloud Practitioner and winner at Amrut Expo 2025, I have successfully delivered live freelance platforms including RestroBazaar and AKHD Media.
