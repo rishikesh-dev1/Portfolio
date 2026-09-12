@@ -32,3 +32,16 @@
   display: block !important;
 }
 
+/* Ensure work section & works page project images fit naturally on mobile and all screen sizes */
+.portfolio-three-item .portfolio-thumb {
+  width: 100%;
+  overflow: hidden;
+}
+
+.portfolio-three-item .portfolio-thumb img {
+  width: 100% !important;
+  height: auto !important;
+  max-width: 100% !important;
+  display: block !important;
+}
+

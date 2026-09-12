@@ -109,7 +109,6 @@ export default function WorksPage() {
                             className="w-100 tw-rounded-lg"
                             src={project.img}
                             alt={project.alt}
-                            style={{ minHeight: '300px', objectFit: 'cover' }}
                           />
                         </a>
                       </div>
