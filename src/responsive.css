@@ -404,15 +404,36 @@ img {
   }
 }
 
+.about-three-counter .tw-btn-circle-icon {
+  line-height: 1 !important;
+  margin-bottom: 6px !important;
+}
+
+.about-three-counter .about-experience-text {
+  font-size: clamp(1rem, 1.25vw, 1.25rem) !important;
+  line-height: 1.25 !important;
+  max-width: 210px !important;
+  margin: 0 auto !important;
+}
+
 @media screen and (max-width: 767px) {
   .about-three-top .tw-mb-21 {
     margin-bottom: 2rem !important;
   }
 
   .about-three-counter .tw-btn-circle {
-    width: min(300px, 85vw) !important;
-    height: min(300px, 85vw) !important;
+    width: min(240px, 75vw) !important;
+    height: min(240px, 75vw) !important;
     margin: 0 auto !important;
+  }
+
+  .about-three-counter .tw-btn-circle-icon {
+    font-size: 95px !important;
+  }
+
+  .about-three-counter .about-experience-text {
+    font-size: 0.95rem !important;
+    max-width: 170px !important;
   }
 }
 
@@ -939,3 +960,49 @@ img {
     transform: translateY(-2px);
   }
 }
+
+/* --- Skills & Interests Brand Card Styling --- */
+.brand-three-item.brand-item {
+  height: auto !important;
+  min-height: 190px !important;
+  padding: 26px 20px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  align-items: center !important;
+  transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+  cursor: default !important;
+}
+
+.brand-three-item.brand-item:hover {
+  transform: translateY(-5px) !important;
+  box-shadow:
+    0 10px 20px 0 rgba(0, 0, 0, 0.18),
+    -4px -4px 0 0 rgba(255, 255, 255, 0.4) !important;
+}
+
+.brand-skill-pill {
+  transition: all 0.2s ease !important;
+  cursor: default;
+}
+
+.brand-skill-pill:hover {
+  background: var(--main-two-600, #ff6b00) !important;
+  color: #ffffff !important;
+  border-color: var(--main-two-600, #ff6b00) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(255, 107, 0, 0.28);
+}
+
+@media screen and (max-width: 767px) {
+  .brand-three-item.brand-item {
+    padding: 20px 14px !important;
+    min-height: 170px !important;
+  }
+  .brand-skill-pill {
+    font-size: 0.8rem !important;
+    padding: 5px 10px !important;
+  }
+}
+
+

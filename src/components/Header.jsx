@@ -55,7 +55,7 @@ export default function Header() {
               <li>
                 <a
                   className="tw-w-13 tw-h-13 lh-1 d-inline-flex justify-content-center align-items-center text-heading tw-text-xl tw-rounded-md"
-                  href="https://rishiwakchaure.vercel.app/"
+                  href="https://rishikeshportfolio-alpha.vercel.app/"
                   target="_blank"
                   rel="noreferrer"
                   title="Portfolio"
@@ -107,10 +107,9 @@ export default function Header() {
             <div className="header-three-button d-none d-md-block">
               <a
                 className="tw-hover-btn bg-black text-white fw-bold tw-py-4 tw-px-10 d-inline-block hover-text-white text-uppercase tw-rounded-md"
-                href="/Rishikesh_CV.pdf"
-                download="Rishikesh_Wakchaure_CV.pdf"
+                href="https://drive.google.com/file/d/1RFoJGHYb8cOP2fnlq-inat087bWSMyhK/view?usp=drive_link"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
               >
                 download cv
                 <span className="tw-hover-btn-circle-dot bg-main-two-600"></span>

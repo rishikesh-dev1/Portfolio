@@ -8524,8 +8524,8 @@ body.tw-magic-cursor #magic-cursor {
   }
 }
 .about-three-counter .tw-btn-circle {
-  width: 412px;
-  height: 412px;
+  width: 310px;
+  height: 310px;
   fill: #f5f5f5;
   box-shadow:
     0 4px 4px 0 rgba(0, 0, 0, 0.25),
@@ -8533,20 +8533,25 @@ body.tw-magic-cursor #magic-cursor {
 }
 @media screen and (max-width: 1199px) {
   .about-three-counter .tw-btn-circle {
-    width: 350px;
-    height: 350px;
+    width: 260px;
+    height: 260px;
   }
 }
 .about-three-counter .tw-btn-circle-icon {
-  font-size: 200px;
+  font-size: 130px;
+}
+@media screen and (max-width: 1199px) {
+  .about-three-counter .tw-btn-circle-icon {
+    font-size: 110px;
+  }
 }
 .about-three-counter .tw-btn-circle-dot {
-  width: 63px;
-  height: 63px;
+  width: 50px;
+  height: 50px;
 }
 .about-three-counter:hover .tw-btn-circle-dot {
-  width: 820px;
-  height: 820px;
+  width: 620px;
+  height: 620px;
 }
 .about-three-wrap-shape {
   position: absolute;

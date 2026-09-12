@@ -182,7 +182,7 @@ export default function ContactPage() {
                     </a>
                     <a
                       className="tw-w-10 tw-h-10 rounded-circle border border-secondary d-flex align-items-center justify-content-center text-white hover-bg-main-two-600 hover-border-main-two-600 tw-transition-3"
-                      href="https://rishiwakchaure.vercel.app/"
+                      href="https://rishikeshportfolio-alpha.vercel.app/"
                       target="_blank"
                       rel="noreferrer"
                       title="Portfolio"

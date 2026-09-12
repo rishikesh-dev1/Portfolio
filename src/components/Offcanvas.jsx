@@ -101,35 +101,19 @@ export default function Offcanvas() {
                     <span>CONTACT</span>
                   </a>
                 </li>
-                <li>
-                  <a
-                    href="/Rishikesh_CV.pdf"
-                    download="Rishikesh_Wakchaure_CV.pdf"
-                    target="_blank"
-                    rel="noreferrer"
-                    onClick={() => {
-                      document.querySelector('.tw-offcanvas-2-area')?.classList.remove('opened');
-                    }}
-                  >
-                    <span className="d-flex align-items-center gap-2">
-                      DOWNLOAD CV <i className="ph ph-download-simple tw-text-xl"></i>
-                    </span>
-                  </a>
-                </li>
               </ul>
             </nav>
             <div className="tw-mt-8 pt-2">
               <a
                 className="tw-hover-btn bg-main-two-600 text-white fw-bold tw-py-3 tw-px-8 d-inline-flex align-items-center gap-2 hover-text-white text-uppercase tw-rounded-md"
-                href="/Rishikesh_CV.pdf"
-                download="Rishikesh_Wakchaure_CV.pdf"
+                href="https://drive.google.com/file/d/1RFoJGHYb8cOP2fnlq-inat087bWSMyhK/view?usp=drive_link"
                 target="_blank"
-                rel="noreferrer"
+                rel="noopener noreferrer"
                 onClick={() => {
                   document.querySelector('.tw-offcanvas-2-area')?.classList.remove('opened');
                 }}
               >
-                <i className="ph ph-download-simple tw-text-lg"></i>
+                <i className="ph ph-arrow-up-right tw-text-lg"></i>
                 Download CV
               </a>
             </div>
@@ -229,7 +213,7 @@ export default function Offcanvas() {
                   </a>
                 </li>
                 <li>
-                  <a href="https://rishiwakchaure.vercel.app" target="_blank" rel="noreferrer">
+                  <a href="https://rishikeshportfolio-alpha.vercel.app/" target="_blank" rel="noreferrer">
                     <span className="active-media d-flex align-items-center tw-gap-1">
                       PORTFOLIO <i className="ph ph-arrow-bend-up-right"></i>
                     </span>

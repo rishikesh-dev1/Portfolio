@@ -63,11 +63,11 @@ export default function AboutSection() {
                       className="tw-btn-circle tw-hover-btn-item tw-hover-btn tw-w-160-px tw-h-160-px lh-1 d-inline-flex justify-content-center align-items-center rounded-circle position-relative overflow-hidden border border-1 border-neutral-200"
                       href="#portfolio"
                     >
-                      <span className="d-flex flex-column justify-content-center">
-                        <span className="tw-btn-circle-icon text-heading tw-text-8 tw-transition-3 font-heading fw-medium">
+                      <span className="d-flex flex-column justify-content-center align-items-center text-center">
+                        <span className="tw-btn-circle-icon text-heading tw-transition-3 font-heading fw-medium">
                           1+
                         </span>
-                        <span className="text-heading fw-bold text-center tw-transition-3 tw-text-2xl fw-medium">
+                        <span className="about-experience-text text-heading fw-bold text-center tw-transition-3 fw-medium">
                           Years Hands-on Experience
                         </span>
                       </span>

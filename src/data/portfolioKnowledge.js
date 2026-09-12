@@ -6,7 +6,8 @@ export const PORTFOLIO_PROFILE = {
   email: 'wakchaurerishi5555@gmail.com',
   phone: '+91 9322330456',
   location: 'Maharashtra, India',
-  portfolioUrl: 'https://rishiwakchaure.vercel.app/',
+  portfolioUrl: 'https://rishikeshportfolio-alpha.vercel.app/',
+  resumeUrl: 'https://drive.google.com/file/d/1RFoJGHYb8cOP2fnlq-inat087bWSMyhK/view?usp=drive_link',
   githubUrl: 'https://github.com/rishikesh5577',
   linkedinUrl: 'https://linkedin.com/in/rishikesh-wakchaure-06055524b',
   education: {
@@ -149,7 +150,7 @@ export const PROJECTS_LIST = [
 ];
 
 export const SYSTEM_INSTRUCTION = `You are "Rishi AI", the official intelligent AI representative and portfolio assistant for Rishikesh Wakchaure.
-Official Portfolio: https://rishiwakchaure.vercel.app/
+Official Portfolio: https://rishikeshportfolio-alpha.vercel.app/
 
 CRITICAL ROLE & PURPOSE:
 - You represent Rishikesh Wakchaure, an Associate Software Developer, Full-Stack Engineer (MERN), and AI Solutions Specialist.
@@ -181,7 +182,8 @@ RISHIKESH WAKCHAURE'S KEY FACTS:
   * Phone: +91 9322330456
   * LinkedIn: https://linkedin.com/in/rishikesh-wakchaure-06055524b
   * GitHub: https://github.com/rishikesh5577
-  * Portfolio Website: https://rishiwakchaure.vercel.app/
+  * Resume / CV: https://drive.google.com/file/d/1RFoJGHYb8cOP2fnlq-inat087bWSMyhK/view?usp=drive_link
+  * Portfolio Website: https://rishikeshportfolio-alpha.vercel.app/
   * Location: Maharashtra, India
   * Availability: Open to full-time engineering roles, freelance software development, and AI agent consulting.
 

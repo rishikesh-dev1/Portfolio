@@ -147,7 +147,7 @@ export default function Footer({ isContactPage = false }) {
                       <li>
                         <a
                           className="tw-w-11 tw-h-101 lh-1 d-inline-flex align-items-center justify-content-center tw-rounded-lg tw-text-xl text-heading hover-bg-main-600 hover-text-heading"
-                          href="https://rishiwakchaure.vercel.app/"
+                          href="https://rishikeshportfolio-alpha.vercel.app/"
                           target="_blank"
                           rel="noreferrer"
                           title="Portfolio"

@@ -285,7 +285,7 @@ body = body.replace(
 );
 body = body.replace(
   /(ph-x-logo[\s\S]*?<a[\s\S]*?href=")#"([\s\S]*?ph-instagram-logo)/,
-  '$1https://rishiwakchaure.vercel.app/"$2'
+  '$1https://rishikeshportfolio-alpha.vercel.app/"$2'
 );
 body = body.replace(
   /(ph-instagram-logo[\s\S]*?<a[\s\S]*?href=")#"([\s\S]*?ph-dribbble-logo)/,

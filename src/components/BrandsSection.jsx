@@ -1,143 +1,94 @@
 export default function BrandsSection() {
+  const skillsData = [
+    {
+      category: 'Programming Languages',
+      icon: 'ph ph-code',
+      skills: ['Java', 'Python', 'SQL'],
+    },
+    {
+      category: 'Web Technologies',
+      icon: 'ph ph-browsers',
+      skills: ['React.js', 'HTML', 'CSS', 'Node.js', 'Express.js'],
+    },
+    {
+      category: 'Cloud & Databases',
+      icon: 'ph ph-cloud',
+      skills: ['AWS', 'Docker', 'MongoDB'],
+    },
+    {
+      category: 'Tools',
+      icon: 'ph ph-wrench',
+      skills: ['Git', 'GitHub', 'Postman', 'VS Code'],
+    },
+    {
+      category: 'Coursework',
+      icon: 'ph ph-graduation-cap',
+      skills: ['DSA', 'OOPs', 'Operating Systems', 'Computer Networks', 'SDLC'],
+    },
+    {
+      category: 'Soft Skills',
+      icon: 'ph ph-users-three',
+      skills: ['Problem Solving', 'Teamwork', 'Leadership', 'Communication'],
+    },
+  ];
+
   return (
-    <section className="brand-three-area brand-two-area pb-120">
+    <section className="brand-three-area brand-two-area pb-120 pt-80" id="skills">
       <div className="container tw-container-1800-px">
         <div className="row">
           <div className="col-xl-12">
             <div className="text-center tw-mb-15">
-              <h2 className="brand-three-title tw-text-xl tw-char-animation">
-                Trusted Tech Across My Stack
+              <h2 className="brand-three-title tw-text-xl tw-char-animation text-uppercase">
+                Skills and Interests
               </h2>
             </div>
           </div>
         </div>
-        <div className="row gx-2">
-          <div className="col-xl-2 col-lg-6 col-md-6">
+        <div className="row gx-3 gy-4 justify-content-center">
+          {skillsData.map((item, idx) => (
             <div
-              className="brand-item brand-three-item position-relative z-1 tw-mb-1"
+              key={item.category}
+              className="col-xl-4 col-lg-4 col-md-6 col-12 d-flex"
               data-aos="fade-up"
               data-aos-duration="1000"
-              data-aos-delay="200"
+              data-aos-delay={100 * ((idx % 3) + 1)}
             >
-              <span className="brand-active-media">
-                <img src="/assets/images/thumbs/marquee-two-thumb1.png" alt="tech logo" />
-              </span>
-              <span className="brand-hover-media">
-                <img src="/assets/images/thumbs/marquee-two-thumb11.png" alt="tech logo" />
-              </span>
+              <div
+                className="brand-item brand-three-item position-relative z-1 w-100 d-flex flex-column justify-content-center align-items-center text-center p-4"
+                style={{
+                  height: 'auto',
+                  minHeight: '190px',
+                }}
+              >
+                <div className="d-flex align-items-center gap-2 mb-3">
+                  <i className={`${item.icon} tw-text-xl text-main-two-600`}></i>
+                  <h3 className="tw-text-lg fw-bold text-heading mb-0 font-heading">
+                    {item.category}
+                  </h3>
+                </div>
+                <div className="d-flex flex-wrap gap-2 justify-content-center align-items-center">
+                  {item.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className="brand-skill-pill fw-medium"
+                      style={{
+                        background: '#ffffff',
+                        color: '#0f172a',
+                        border: '1px solid rgba(0, 0, 0, 0.08)',
+                        padding: '6px 14px',
+                        borderRadius: '20px',
+                        fontSize: '0.875rem',
+                        boxShadow: '0 2px 4px rgba(0, 0, 0, 0.04)',
+                        transition: 'all 0.2s ease',
+                      }}
+                    >
+                      {skill}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="col-xl-2 col-lg-6 col-md-6">
-            <div
-              className="brand-item brand-three-item position-relative z-1 tw-mb-1"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay="300"
-            >
-              <span className="brand-active-media">
-                <img src="/assets/images/thumbs/marquee-two-thumb2.png" alt="tech logo" />
-              </span>
-              <span className="brand-hover-media">
-                <img src="/assets/images/thumbs/marquee-two-thumb22.png" alt="tech logo" />
-              </span>
-            </div>
-          </div>
-          <div className="col-xl-2 col-lg-6 col-md-6"></div>
-          <div className="col-xl-2 col-lg-6 col-md-6">
-            <div
-              className="brand-item brand-three-item position-relative z-1 tw-mb-1"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay="400"
-            >
-              <span className="brand-active-media">
-                <img src="/assets/images/thumbs/marquee-thumb55.png" alt="tech logo" />
-              </span>
-              <span className="brand-hover-media">
-                <img src="/assets/images/thumbs/marquee-thumb5.png" alt="tech logo" />
-              </span>
-            </div>
-          </div>
-          <div className="col-xl-2 col-lg-6 col-md-6"></div>
-          <div className="col-xl-2 col-lg-6 col-md-6">
-            <div
-              className="brand-item brand-three-item position-relative z-1 tw-mb-1"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay="500"
-            >
-              <span className="brand-active-media">
-                <img src="/assets/images/thumbs/marquee-two-thumb4.png" alt="tech logo" />
-              </span>
-              <span className="brand-hover-media">
-                <img src="/assets/images/thumbs/marquee-two-thumb44.png" alt="tech logo" />
-              </span>
-            </div>
-          </div>
-        </div>
-        <div className="row gx-2">
-          <div className="col-xl-2 col-lg-6 col-md-6"></div>
-          <div className="col-xl-2 col-lg-6 col-md-6">
-            <div
-              className="brand-item brand-three-item position-relative z-1 tw-mb-1"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay="200"
-            >
-              <span className="brand-active-media">
-                <img src="/assets/images/thumbs/marquee-thumb33.png" alt="tech logo" />
-              </span>
-              <span className="brand-hover-media">
-                <img src="/assets/images/thumbs/marquee-thumb3.png" alt="tech logo" />
-              </span>
-            </div>
-          </div>
-          <div className="col-xl-2 col-lg-6 col-md-6">
-            <div
-              className="brand-item brand-three-item position-relative z-1 tw-mb-1"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay="300"
-            >
-              <span className="brand-active-media">
-                <img src="/assets/images/thumbs/marquee-thumb11.png" alt="tech logo" />
-              </span>
-              <span className="brand-hover-media">
-                <img src="/assets/images/thumbs/marquee-thumb1.png" alt="tech logo" />
-              </span>
-            </div>
-          </div>
-          <div className="col-xl-2 col-lg-6 col-md-6"></div>
-          <div className="col-xl-2 col-lg-6 col-md-6">
-            <div
-              className="brand-item brand-three-item position-relative z-1 tw-mb-1"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay="400"
-            >
-              <span className="brand-active-media">
-                <img src="/assets/images/thumbs/marquee-thumb66.png" alt="tech logo" />
-              </span>
-              <span className="brand-hover-media">
-                <img src="/assets/images/thumbs/marquee-thumb6.png" alt="tech logo" />
-              </span>
-            </div>
-          </div>
-          <div className="col-xl-2 col-lg-6 col-md-6">
-            <div
-              className="brand-item brand-three-item position-relative z-1 tw-mb-1"
-              data-aos="fade-up"
-              data-aos-duration="1000"
-              data-aos-delay="500"
-            >
-              <span className="brand-active-media">
-                <img src="/assets/images/thumbs/marquee-thumb22.png" alt="tech logo" />
-              </span>
-              <span className="brand-hover-media">
-                <img src="/assets/images/thumbs/marquee-thumb2.png" alt="tech logo" />
-              </span>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
