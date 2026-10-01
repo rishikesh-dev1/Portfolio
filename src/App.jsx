@@ -7,36 +7,37 @@ import Footer from './components/Footer';
 import HomePage from './pages/HomePage';
 import WorksPage from './pages/WorksPage';
 import ContactPage from './pages/ContactPage';
-import ChatBot from './components/ChatBot';
+import ChatBot, { ChatLauncher } from './components/ChatBot';
+
+function resolvePage() {
+  if (typeof window === 'undefined') return 'home';
+  const hash = window.location.hash.toLowerCase();
+  const path = window.location.pathname.toLowerCase();
+  if (hash.startsWith('#/works') || hash.startsWith('#works') || path === '/works') return 'works';
+  if (hash.startsWith('#/contact') || hash.startsWith('#contact') || path === '/contact') return 'contact';
+  return 'home';
+}
+
+function checkIsChatRoute() {
+  if (typeof window === 'undefined') return false;
+  const hash = window.location.hash.toLowerCase();
+  const path = window.location.pathname.toLowerCase();
+  return hash.startsWith('#/chat') || hash.startsWith('#chat') || path === '/chat';
+}
 
 export default function App() {
   useTemplateEffects();
 
-  const [currentRoute, setCurrentRoute] = useState(() => {
-    if (typeof window !== 'undefined') {
-      const hash = window.location.hash.toLowerCase();
-      const path = window.location.pathname.toLowerCase();
-      if (hash.startsWith('#/works') || hash.startsWith('#works') || path === '/works') {
-        return 'works';
-      }
-      if (hash.startsWith('#/contact') || hash.startsWith('#contact') || path === '/contact') {
-        return 'contact';
-      }
-    }
-    return 'home';
-  });
+  const [currentRoute, setCurrentRoute] = useState(resolvePage);
+  const [isChatOpen, setIsChatOpen] = useState(checkIsChatRoute);
 
   useEffect(() => {
     const handleRoute = () => {
-      const hash = window.location.hash.toLowerCase();
-      const path = window.location.pathname.toLowerCase();
-      if (hash.startsWith('#/works') || hash.startsWith('#works') || path === '/works') {
-        setCurrentRoute('works');
-      } else if (hash.startsWith('#/contact') || hash.startsWith('#contact') || path === '/contact') {
-        setCurrentRoute('contact');
-      } else {
-        setCurrentRoute('home');
+      const isChat = checkIsChatRoute();
+      if (!isChat) {
+        setCurrentRoute(resolvePage());
       }
+      setIsChatOpen(isChat);
     };
 
     window.addEventListener('hashchange', handleRoute);
@@ -48,7 +49,7 @@ export default function App() {
   }, []);
 
   useEffect(() => {
-    // 1. Immediately scroll to top
+    // 1. Immediately scroll to top when main page route changes
     if (window.smoother && typeof window.smoother.scrollTo === 'function') {
       window.smoother.scrollTo(0, false);
     } else {
@@ -57,30 +58,24 @@ export default function App() {
 
     // 2. Comprehensive Animation, AOS & Visibility Sync
     const syncView = () => {
-      // Re-scan and refresh AOS
       if (window.AOS) {
         try {
           window.AOS.refreshHard();
         } catch (e) {}
       }
 
-      // Re-calculate GSAP ScrollTrigger layout positions
       if (window.ScrollTrigger) {
         try {
           window.ScrollTrigger.refresh();
         } catch (e) {}
       }
 
-      // Re-trigger PureCounter if needed
       if (window.PureCounter) {
         try {
           new window.PureCounter();
         } catch (e) {}
       }
 
-      // Absolute safety guarantee:
-      // Ensure all [data-aos] elements within visible sections receive 'aos-animate'
-      // so no content or card EVER stays stuck at opacity: 0!
       document.querySelectorAll('[data-aos]').forEach((el) => {
         const rect = el.getBoundingClientRect();
         if (rect.top < window.innerHeight + 150) {
@@ -99,6 +94,49 @@ export default function App() {
     };
   }, [currentRoute]);
 
+  // Mobile-only body scroll lock so desktop remains free to scroll & browse
+  useEffect(() => {
+    const syncMobileScrollLock = () => {
+      const isMobile = window.innerWidth <= 768;
+      if (isChatOpen && isMobile) {
+        document.body.classList.add('rishi-chat-mobile-open');
+        if (window.smoother && typeof window.smoother.paused === 'function') {
+          window.smoother.paused(true);
+        }
+      } else {
+        document.body.classList.remove('rishi-chat-mobile-open');
+        if (window.smoother && typeof window.smoother.paused === 'function') {
+          window.smoother.paused(false);
+        }
+      }
+    };
+
+    syncMobileScrollLock();
+    window.addEventListener('resize', syncMobileScrollLock);
+    return () => {
+      window.removeEventListener('resize', syncMobileScrollLock);
+      document.body.classList.remove('rishi-chat-mobile-open');
+      if (window.smoother && typeof window.smoother.paused === 'function') {
+        window.smoother.paused(false);
+      }
+    };
+  }, [isChatOpen]);
+
+  const handleOpenChat = () => {
+    setIsChatOpen(true);
+    if (!window.location.hash.toLowerCase().includes('chat')) {
+      window.location.hash = '#/chat';
+    }
+  };
+
+  const handleCloseChat = () => {
+    setIsChatOpen(false);
+    if (window.location.hash.toLowerCase().includes('chat')) {
+      const targetHash = currentRoute === 'home' ? '#/' : `#/${currentRoute}`;
+      window.location.hash = targetHash;
+    }
+  };
+
   return (
     <>
       <UIElements />
@@ -114,7 +152,8 @@ export default function App() {
           <Footer isContactPage={currentRoute === 'contact'} />
         </div>
       </div>
-      <ChatBot />
+      <ChatBot isOpen={isChatOpen} onClose={handleCloseChat} />
+      {!isChatOpen && <ChatLauncher onOpen={handleOpenChat} />}
     </>
   );
 }

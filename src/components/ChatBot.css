@@ -20,6 +20,57 @@
   font-family: 'Outfit', 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
+/* Hidden State */
+.aanvi-chat-page-hidden {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* ==========================================================================
+   DESKTOP POPUP WIDGET (min-width: 769px)
+   On large screens, chatbot appears as a sleek floating popup in bottom right
+   ========================================================================== */
+.aanvi-chat-page {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 420px;
+  max-width: calc(100vw - 32px);
+  height: 680px;
+  max-height: calc(100dvh - 36px);
+  z-index: 999999;
+  font-family: 'Outfit', 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  border-radius: 24px;
+  border: 1.5px solid rgba(255, 107, 0, 0.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.88), 0 0 40px rgba(255, 107, 0, 0.25);
+  background: #09090c;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  animation: aanviPopupScale 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  transform-origin: bottom right;
+}
+
+@keyframes aanviPopupScale {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.92);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.aanvi-chat-page-stage {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
 /* Floating Launcher Button */
 .aanvi-launcher-btn {
   position: relative;
@@ -118,36 +169,20 @@
   padding-right: 4px;
 }
 
-/* Chat Window Modal */
+/* Chat Container Card */
 .aanvi-chat-card {
-  position: fixed;
-  bottom: 88px;
-  right: 24px;
-  width: 415px;
-  max-width: calc(100vw - 32px);
-  height: 630px;
-  max-height: calc(100vh - 110px);
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
   background-color: #09090c;
   background: #09090c radial-gradient(circle at 80% 0%, #220e04 0%, #09090c 70%);
-  border: 1.5px solid rgba(255, 107, 0, 0.4);
-  border-radius: 24px;
+  border: none;
+  border-radius: 22px;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.96), 0 0 50px rgba(255, 107, 0, 0.22), inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  box-shadow: none;
   overflow: hidden;
-  animation: aanviCardOpen 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-  z-index: 999999;
-}
-
-@keyframes aanviCardOpen {
-  from {
-    opacity: 0;
-    transform: translateY(22px) scale(0.94);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0) scale(1);
-  }
 }
 
 /* ==========================================================================
@@ -786,7 +821,91 @@
    Mobile Responsiveness
    ========================================================================== */
 
-@media (max-width: 480px) {
+/* Smaller desktop / laptop screen height adjustments */
+@media (min-width: 769px) and (max-height: 720px) {
+  .aanvi-chat-page {
+    height: calc(100dvh - 28px);
+    bottom: 14px;
+    right: 18px;
+  }
+
+  .aanvi-orbit-stage {
+    width: 200px;
+    height: 190px;
+    margin-bottom: 8px;
+  }
+
+  .aanvi-orbit-svg {
+    width: 250px;
+    height: 250px;
+  }
+
+  .aanvi-hero-avatar-wrap {
+    width: 125px;
+    height: 125px;
+  }
+
+  .aanvi-onboarding-hi {
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+  }
+
+  .aanvi-onboarding-title {
+    font-size: 1.45rem;
+  }
+
+  .aanvi-get-started-btn {
+    height: 46px;
+    font-size: 0.95rem;
+  }
+}
+
+/* ==========================================================================
+   MOBILE FULL-SCREEN MODE (max-width: 768px)
+   Full screen immersion only for mobile devices as requested
+   ========================================================================== */
+@media (max-width: 768px) {
+  body.rishi-chat-mobile-open {
+    overflow: hidden !important;
+    height: 100%;
+  }
+
+  body.rishi-chat-mobile-open .header,
+  body.rishi-chat-mobile-open .tw-offcanvas-2-area,
+  body.rishi-chat-mobile-open .aanvi-chatbot-wrapper,
+  body.rishi-chat-mobile-open .back-to-top-wrapper,
+  body.rishi-chat-mobile-open #magic-cursor,
+  body.rishi-chat-mobile-open .overlay,
+  body.rishi-chat-mobile-open .side-overlay {
+    display: none !important;
+  }
+
+  .aanvi-chat-page {
+    position: fixed;
+    inset: 0;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    height: 100dvh;
+    max-height: 100dvh;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+    z-index: 2147483000;
+    transform: none !important;
+    animation: aanviFadeIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  .aanvi-chat-card {
+    border-radius: 0 !important;
+    border: none !important;
+    height: 100%;
+    width: 100%;
+  }
+
   .aanvi-chatbot-wrapper {
     bottom: 16px;
     right: 16px;
@@ -804,15 +923,6 @@
 
   .aanvi-launcher-label {
     font-size: 0.88rem;
-  }
-
-  .aanvi-chat-card {
-    right: 12px;
-    bottom: 74px;
-    width: calc(100vw - 24px);
-    height: calc(100dvh - 90px);
-    max-height: 580px;
-    border-radius: 20px;
   }
 
   .aanvi-onboarding-title {

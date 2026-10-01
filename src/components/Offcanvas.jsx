@@ -90,6 +90,19 @@ export default function Offcanvas() {
                 </li>
                 <li>
                   <a
+                    href="#/chat"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      document.querySelector('.tw-offcanvas-2-area')?.classList.remove('opened');
+                      window.location.hash = '#/chat';
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }}
+                  >
+                    <span>RISHI AI</span>
+                  </a>
+                </li>
+                <li>
+                  <a
                     href="#/contact"
                     onClick={(e) => {
                       e.preventDefault();

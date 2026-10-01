@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from 'react';
 import './ChatBot.css';
 import { streamGeminiMessage, cleanBotResponse } from '../services/geminiService';
 
-// Exact 3D Robot Avatar from Aanvitha
 const AANVI_ROBOT_AVATAR =
   'https://res.cloudinary.com/vpqvkwtj/image/upload/v1788778171/08ffbcb6-0ef4-42f1-b00f-4073d402a82b.png';
 
@@ -21,6 +20,16 @@ const QUICK_SUGGESTIONS = [
   'How can I contact Rishikesh?',
 ];
 
+function goToChatPage() {
+  window.location.hash = '#/chat';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+function goHome() {
+  window.location.hash = '#/';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
 /**
  * Lightweight safe markdown renderer for chat messages
  */
@@ -36,7 +45,7 @@ function MarkdownText({ text }) {
     if (url.startsWith('#')) {
       e.preventDefault();
       const targetId = url.replace(/^#\/?/, '');
-      if (targetId === 'works' || targetId === 'contact') {
+      if (targetId === 'works' || targetId === 'contact' || targetId === 'chat') {
         window.location.hash = targetId;
       } else {
         const el = document.getElementById(targetId);
@@ -135,8 +144,34 @@ function MarkdownText({ text }) {
   return <>{elements}</>;
 }
 
-export default function ChatBot() {
-  const [isOpen, setIsOpen] = useState(false);
+export function ChatLauncher({ onOpen }) {
+  const handleClick = () => {
+    if (onOpen) {
+      onOpen();
+    } else {
+      goToChatPage();
+    }
+  };
+
+  return (
+    <div className="aanvi-chatbot-wrapper">
+      <button
+        type="button"
+        className="aanvi-launcher-btn"
+        onClick={handleClick}
+        aria-label="Open AI Assistant"
+      >
+        <div className="aanvi-launcher-icon-wrap">
+          <span className="aanvi-pulse-ring" />
+          <img src={AANVI_ROBOT_AVATAR} alt="Rishi AI" className="aanvi-launcher-img" />
+        </div>
+        <span className="aanvi-launcher-label">Ask Rishi AI</span>
+      </button>
+    </div>
+  );
+}
+
+export default function ChatBot({ isOpen = true, onClose }) {
   const [hasStarted, setHasStarted] = useState(false);
   const [messages, setMessages] = useState([INITIAL_MESSAGE]);
   const [inputText, setInputText] = useState('');
@@ -145,21 +180,27 @@ export default function ChatBot() {
   const messagesEndRef = useRef(null);
   const inputRef = useRef(null);
 
-  // Auto-scroll when new messages arrive
+  const handleClose = () => {
+    if (onClose) {
+      onClose();
+    } else {
+      goHome();
+    }
+  };
+
   useEffect(() => {
-    if (isOpen && hasStarted) {
+    if (hasStarted) {
       messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
     }
-  }, [messages, isOpen, hasStarted, isLoading]);
+  }, [messages, hasStarted, isLoading]);
 
-  // Focus input when moving to chat flow
   useEffect(() => {
-    if (isOpen && hasStarted) {
+    if (hasStarted) {
       setTimeout(() => {
         inputRef.current?.focus();
       }, 200);
     }
-  }, [isOpen, hasStarted]);
+  }, [hasStarted]);
 
   const handleClearChat = () => {
     if (window.confirm('Restart conversation?')) {
@@ -234,36 +275,17 @@ export default function ChatBot() {
   };
 
   return (
-    <div className="aanvi-chatbot-wrapper">
-      {/* Floating launcher button */}
-      {!isOpen && (
-        <button
-          type="button"
-          className="aanvi-launcher-btn"
-          onClick={() => setIsOpen(true)}
-          aria-label="Open AI Assistant"
-        >
-          <div className="aanvi-launcher-icon-wrap">
-            <span className="aanvi-pulse-ring" />
-            <img src={AANVI_ROBOT_AVATAR} alt="Rishi AI" className="aanvi-launcher-img" />
-          </div>
-          <span className="aanvi-launcher-label">Ask Rishi AI</span>
-        </button>
-      )}
-
-      {/* Chat window modal */}
-      {isOpen && (
-        <div className="aanvi-chat-card" role="dialog" aria-modal="true" aria-label="Rishi AI Assistant">
+    <div className={`aanvi-chat-page ${!isOpen ? 'aanvi-chat-page-hidden' : ''}`} aria-hidden={!isOpen}>
+      <div className="aanvi-chat-page-stage">
+        <div className="aanvi-chat-card" role="dialog" aria-label="Rishi AI Assistant">
           {!hasStarted ? (
-            /* ── Pre-Chat Onboarding / Welcome Screen (Aanvitha Reference UI) ── */
             <div className="aanvi-onboarding-screen">
-              {/* Top Bar: Close Button */}
               <div className="aanvi-onboarding-top">
                 <button
                   type="button"
                   className="aanvi-icon-btn aanvi-close-btn"
                   title="Close Chat"
-                  onClick={() => setIsOpen(false)}
+                  onClick={handleClose}
                   aria-label="Close Chat"
                 >
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -273,10 +295,8 @@ export default function ChatBot() {
                 </button>
               </div>
 
-              {/* Center Stage: Futuristic Concentric Orbits, Floating Crystals & 3D Robot */}
               <div className="aanvi-onboarding-center">
                 <div className="aanvi-orbit-stage">
-                  {/* Glowing Wireframe Concentric Orbits */}
                   <svg className="aanvi-orbit-svg" viewBox="0 0 340 340" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <defs>
                       <radialGradient id="rishiStageGlow" cx="50%" cy="50%" r="50%">
@@ -295,24 +315,18 @@ export default function ChatBot() {
                         <stop offset="100%" stopColor="#ffa048" stopOpacity="0.12" />
                       </linearGradient>
                     </defs>
-
-                    {/* Central Atmosphere Glow */}
                     <circle cx="170" cy="170" r="150" fill="url(#rishiStageGlow)" />
-
-                    {/* Elliptical Wireframe Orbits */}
                     <ellipse cx="170" cy="170" rx="155" ry="105" stroke="url(#orbitGrad1)" strokeWidth="1.1" strokeDasharray="5 7" opacity="0.5" transform="rotate(-18 170 170)" />
                     <ellipse cx="170" cy="170" rx="134" ry="84" stroke="url(#orbitGrad2)" strokeWidth="1.3" opacity="0.7" transform="rotate(14 170 170)" />
                     <ellipse cx="170" cy="170" rx="110" ry="62" stroke="url(#orbitGrad1)" strokeWidth="1.6" opacity="0.85" transform="rotate(-22 170 170)" />
                     <ellipse cx="170" cy="170" rx="84" ry="44" stroke="#ff6b00" strokeWidth="1.2" strokeDasharray="3 5" opacity="0.8" transform="rotate(20 170 170)" />
                   </svg>
 
-                  {/* Floating Cosmic Shards */}
                   <div className="aanvi-floating-shard shard-1" />
                   <div className="aanvi-floating-shard shard-2" />
                   <div className="aanvi-floating-shard shard-3" />
                   <div className="aanvi-floating-shard shard-4" />
 
-                  {/* Centered Robot Avatar */}
                   <div className="aanvi-hero-avatar-wrap">
                     <img
                       src={AANVI_ROBOT_AVATAR}
@@ -322,7 +336,6 @@ export default function ChatBot() {
                   </div>
                 </div>
 
-                {/* Greeting Title */}
                 <div className="aanvi-onboarding-copy">
                   <div className="aanvi-onboarding-hi">Hi, I'm Rishi AI! 👋</div>
                   <h2 className="aanvi-onboarding-title">
@@ -331,7 +344,6 @@ export default function ChatBot() {
                 </div>
               </div>
 
-              {/* Bottom Action: Get Started Button */}
               <div className="aanvi-onboarding-bottom">
                 <button
                   type="button"
@@ -346,9 +358,7 @@ export default function ChatBot() {
               </div>
             </div>
           ) : (
-            /* ── Active Chat Conversation Screen ── */
             <div className="aanvi-chat-active-flow">
-              {/* Header */}
               <div className="aanvi-chat-header">
                 <div className="aanvi-header-identity">
                   <div className="aanvi-header-avatar-box">
@@ -379,7 +389,7 @@ export default function ChatBot() {
                     type="button"
                     className="aanvi-icon-btn aanvi-close-btn"
                     title="Close Chat"
-                    onClick={() => setIsOpen(false)}
+                    onClick={handleClose}
                     aria-label="Close Chat"
                   >
                     <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
@@ -390,7 +400,6 @@ export default function ChatBot() {
                 </div>
               </div>
 
-              {/* Messages Body */}
               <div className="aanvi-chat-messages">
                 {messages.map((msg) => (
                   <div key={msg.id} className={`aanvi-msg-row ${msg.role}`}>
@@ -416,7 +425,6 @@ export default function ChatBot() {
                 <div ref={messagesEndRef} />
               </div>
 
-              {/* Quick Suggestions (Shown when idle & conversation is fresh) */}
               {!isLoading && messages.length <= 3 && (
                 <div className="aanvi-chips-container">
                   <div className="aanvi-chips-scroll">
@@ -433,7 +441,6 @@ export default function ChatBot() {
                 </div>
               )}
 
-              {/* Footer with Input */}
               <div className="aanvi-chat-footer">
                 <form
                   onSubmit={(e) => {
@@ -471,7 +478,7 @@ export default function ChatBot() {
             </div>
           )}
         </div>
-      )}
+      </div>
     </div>
   );
 }

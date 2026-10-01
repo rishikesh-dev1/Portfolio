@@ -290,6 +290,19 @@ export default function Footer({ isContactPage = false }) {
                     <li>
                       <a
                         className="tw-text-lg text-white"
+                        href="#/chat"
+                        onClick={(e) => {
+                          e.preventDefault();
+                          window.location.hash = '#/chat';
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }}
+                      >
+                        Rishi AI,
+                      </a>
+                    </li>
+                    <li>
+                      <a
+                        className="tw-text-lg text-white"
                         href="#/contact"
                         onClick={(e) => {
                           e.preventDefault();
