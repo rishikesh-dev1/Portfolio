@@ -1,4 +1,8 @@
+import { projectsData } from '../data/projectsData';
+
 export default function PortfolioSection() {
+  const featuredProjects = projectsData.filter((project) => project.featured);
+
   return (
     <section className="portfolio-three-area py-120 position-relative z-1" id="portfolio">
       <div className="portfolio-three-shape">
@@ -8,447 +12,79 @@ export default function PortfolioSection() {
         <div className="row">
           <div className="col-xl-12">
             <div className="portfolio-three-wrapper position-relative z-1">
-              {/* Project 1: Aanvitha Technologies */}
-              <div className="portfolio-three-item tw-rounded-lg portfolio-wrapper">
-                <div className="portfolio-three-wrap">
-                  <div className="d-flex justify-content-between align-items-start gap-3 tw-mb-4">
-                    <div>
-                      <span className="text-main-two-600 tw-text-sm fw-semibold text-uppercase tw-mb-2 d-inline-block">
-                        Freelance — Live Project
-                      </span>
-                      <h2 className="tw-text-605 fw-medium mb-0">
-                        <a
-                          className="hover-text-main-two-600"
-                          href="https://www.aanvitha.tech"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Aanvitha Technologies
-                        </a>
-                      </h2>
+              {featuredProjects.map((project) => {
+                const targetUrl =
+                  project.liveUrl && project.liveUrl !== '#' ? project.liveUrl : project.githubUrl || '#/works';
+                const isExternal = targetUrl.startsWith('http');
+
+                return (
+                  <div
+                    key={project.id}
+                    className="portfolio-three-item tw-rounded-lg portfolio-wrapper"
+                  >
+                    <div className="portfolio-three-wrap">
+                      <div className="d-flex justify-content-between align-items-start gap-3 tw-mb-4">
+                        <div>
+                          <span className="text-main-two-600 tw-text-sm fw-semibold text-uppercase tw-mb-2 d-inline-block">
+                            {project.subtitle}
+                          </span>
+                          <h2 className="tw-text-605 fw-medium mb-0">
+                            <a
+                              className="hover-text-main-two-600"
+                              href={targetUrl}
+                              target={isExternal ? '_blank' : '_self'}
+                              rel={isExternal ? 'noopener noreferrer' : undefined}
+                            >
+                              {project.title}
+                            </a>
+                          </h2>
+                        </div>
+                        <div className="portfolio-three-button flex-shrink-0">
+                          <a
+                            className="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white"
+                            href={targetUrl}
+                            target={isExternal ? '_blank' : '_self'}
+                            rel={isExternal ? 'noopener noreferrer' : undefined}
+                            aria-label={`View ${project.title}`}
+                          >
+                            <i className="ph ph-arrow-up-right"></i>
+                          </a>
+                        </div>
+                      </div>
+                      <div className="portfolio-three-list portfolio-list tw-mb-6">
+                        <ul className="d-flex tw-gap-205 flex-wrap">
+                          {project.tags.map((tag) => (
+                            <li key={tag}>
+                              <a
+                                className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
+                                href={targetUrl}
+                                target={isExternal ? '_blank' : '_self'}
+                                rel={isExternal ? 'noopener noreferrer' : undefined}
+                              >
+                                {tag}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                    <div className="portfolio-three-button flex-shrink-0">
+                    <div
+                      className="portfolio-thumb not-hide-cursor fw-bold mb-0 tw-rounded-lg"
+                      data-cursor="View"
+                    >
                       <a
-                        className="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white"
-                        href="https://www.aanvitha.tech"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="View Aanvitha Technologies"
+                        className="d-block cursor-hide tw-rounded-lg"
+                        href={targetUrl}
+                        target={isExternal ? '_blank' : '_self'}
+                        rel={isExternal ? 'noopener noreferrer' : undefined}
                       >
-                        <i className="ph ph-arrow-up-right"></i>
+                        <img className="w-100 tw-rounded-lg" src={project.img} alt={project.alt} />
                       </a>
                     </div>
                   </div>
-                  <div className="portfolio-three-list portfolio-list tw-mb-6">
-                    <ul className="d-flex tw-gap-205 flex-wrap">
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://www.aanvitha.tech"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          React 19
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://www.aanvitha.tech"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          JavaScript
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://www.aanvitha.tech"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Vite
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://www.aanvitha.tech"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          CSS3
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://www.aanvitha.tech"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Google Gemini API
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://www.aanvitha.tech"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Webhooks
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://www.aanvitha.tech"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          CSV
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div
-                  className="portfolio-thumb not-hide-cursor fw-bold mb-0 tw-rounded-lg"
-                  data-cursor="View"
-                >
-                  <a
-                    className="d-block cursor-hide tw-rounded-lg"
-                    href="https://www.aanvitha.tech"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      className="w-100 tw-rounded-lg"
-                      src="https://res.cloudinary.com/dl6hpq7mm/image/upload/v1789108842/25ebee3a-9fce-4d70-bbd5-73e5113ba981.png"
-                      alt="Aanvitha Technologies — Enterprise AI, Fintech & SaaS Platform"
-                    />
-                  </a>
-                </div>
-              </div>
+                );
+              })}
 
-              {/* Project 2: AKHD Media */}
-              <div className="portfolio-three-item tw-rounded-lg portfolio-wrapper">
-                <div className="portfolio-three-wrap">
-                  <div className="d-flex justify-content-between align-items-start gap-3 tw-mb-4">
-                    <div>
-                      <span className="text-main-two-600 tw-text-sm fw-semibold text-uppercase tw-mb-2 d-inline-block">
-                        Freelance — Live Project
-                      </span>
-                      <h2 className="tw-text-605 fw-medium mb-0">
-                        <a
-                          className="hover-text-main-two-600"
-                          href="https://www.akhdmedia.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          AKHD Media
-                        </a>
-                      </h2>
-                    </div>
-                    <div className="portfolio-three-button flex-shrink-0">
-                      <a
-                        className="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white"
-                        href="https://www.akhdmedia.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="View AKHD Media"
-                      >
-                        <i className="ph ph-arrow-up-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="portfolio-three-list portfolio-list tw-mb-6">
-                    <ul className="d-flex tw-gap-205 flex-wrap">
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://www.akhdmedia.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          MERN Stack
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://www.akhdmedia.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Amazon S3
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://www.akhdmedia.com"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          AWS Hosting
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div
-                  className="portfolio-thumb not-hide-cursor fw-bold mb-0 tw-rounded-lg"
-                  data-cursor="View"
-                >
-                  <a
-                    className="d-block cursor-hide tw-rounded-lg"
-                    href="https://www.akhdmedia.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      className="w-100 tw-rounded-lg"
-                      src="https://res.cloudinary.com/dl6hpq7mm/image/upload/v1789108941/1a7acce9-9b3d-4d6f-adb2-2032648be971.png"
-                      alt="AKHD Media Video Platform"
-                    />
-                  </a>
-                </div>
-              </div>
-
-              {/* Project 3: RestroBazaar */}
-              <div className="portfolio-three-item tw-rounded-lg portfolio-wrapper">
-                <div className="portfolio-three-wrap">
-                  <div className="d-flex justify-content-between align-items-start gap-3 tw-mb-4">
-                    <div>
-                      <span className="text-main-two-600 tw-text-sm fw-semibold text-uppercase tw-mb-2 d-inline-block">
-                        Freelance — Live Project
-                      </span>
-                      <h2 className="tw-text-605 fw-medium mb-0">
-                        <a
-                          className="hover-text-main-two-600"
-                          href="https://restrobazaar.in/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          RestroBazaar
-                        </a>
-                      </h2>
-                    </div>
-                    <div className="portfolio-three-button flex-shrink-0">
-                      <a
-                        className="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white"
-                        href="https://restrobazaar.in/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="View RestroBazaar"
-                      >
-                        <i className="ph ph-arrow-up-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="portfolio-three-list portfolio-list tw-mb-6">
-                    <ul className="d-flex tw-gap-205 flex-wrap">
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://restrobazaar.in/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          React.js
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://restrobazaar.in/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Node.js
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://restrobazaar.in/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Express.js
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://restrobazaar.in/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          MongoDB
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://restrobazaar.in/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          AWS
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://restrobazaar.in/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Admin & Vendor Panels
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div
-                  className="portfolio-thumb not-hide-cursor fw-bold mb-0 tw-rounded-lg"
-                  data-cursor="View"
-                >
-                  <a
-                    className="d-block cursor-hide tw-rounded-lg"
-                    href="https://restrobazaar.in/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      className="w-100 tw-rounded-lg"
-                      src="https://res.cloudinary.com/dl6hpq7mm/image/upload/v1789109949/755cad8d-f4f5-4ecf-8533-bc532d7c7b40.png"
-                      alt="RestroBazaar — Multi-Vendor eCommerce Platform"
-                    />
-                  </a>
-                </div>
-              </div>
-
-              {/* Project 4: Fashion-Cart */}
-              <div className="portfolio-three-item tw-rounded-lg portfolio-wrapper">
-                <div className="portfolio-three-wrap">
-                  <div className="d-flex justify-content-between align-items-start gap-3 tw-mb-4">
-                    <div>
-                      <span className="text-main-two-600 tw-text-sm fw-semibold text-uppercase tw-mb-2 d-inline-block">
-                        Freelance — Live Project
-                      </span>
-                      <h2 className="tw-text-605 fw-medium mb-0">
-                        <a
-                          className="hover-text-main-two-600"
-                          href="https://www.fashion-cart.in/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Fashion-Cart
-                        </a>
-                      </h2>
-                    </div>
-                    <div className="portfolio-three-button flex-shrink-0">
-                      <a
-                        className="portfolio-three-btn tw-w-8 tw-h-8 lh-1 d-inline-flex justify-content-center align-items-center text-heading rounded-circle hover-bg-main-two-600 hover-text-white"
-                        href="https://www.fashion-cart.in/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label="View Fashion-Cart"
-                      >
-                        <i className="ph ph-arrow-up-right"></i>
-                      </a>
-                    </div>
-                  </div>
-                  <div className="portfolio-three-list portfolio-list tw-mb-6">
-                    <ul className="d-flex tw-gap-205 flex-wrap">
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://www.fashion-cart.in/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          React.js
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://www.fashion-cart.in/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Node.js
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://www.fashion-cart.in/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Express.js
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://www.fashion-cart.in/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          MongoDB
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://www.fashion-cart.in/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          Stripe
-                        </a>
-                      </li>
-                      <li>
-                        <a
-                          className="text-uppercase text-heading fw-medium position-relative z-1 hover-bg-main-two-600 hover-border-main-two-600 hover-text-white tw-transition-3"
-                          href="https://www.fashion-cart.in/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          AWS
-                        </a>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div
-                  className="portfolio-thumb not-hide-cursor fw-bold mb-0 tw-rounded-lg"
-                  data-cursor="View"
-                >
-                  <a
-                    className="d-block cursor-hide tw-rounded-lg"
-                    href="https://www.fashion-cart.in/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <img
-                      className="w-100 tw-rounded-lg"
-                      src="https://res.cloudinary.com/dl6hpq7mm/image/upload/v1789124579/40d6d83e-fe73-48cf-a02a-101e1b0affa0.png"
-                      alt="Fashion-Cart — Modern Fashion E-Commerce Platform"
-                    />
-                  </a>
-                </div>
-              </div>
-
-              {/* Discover Projects Counter Circle */}
               <div className="about-three-counter portfolio-three-counter d-flex justify-content-center w-100">
                 <div className="tw-hover-btn-wrapper d-inline-block">
                   <a

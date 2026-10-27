@@ -46,7 +46,7 @@ export const PORTFOLIO_PROFILE = {
   ],
   stats: {
     experience: '1+ Years Hands-on Industry Experience',
-    completedProjects: '8+ Production & Freelance Projects',
+    completedProjects: '10+ Production & Freelance Projects',
     technologies: '15+ Modern Frameworks & Cloud Tools',
     clientSatisfaction: '100% On-time Delivery'
   }
@@ -85,11 +85,25 @@ export const CORE_SERVICES = [
 
 export const PROJECTS_LIST = [
   {
+    name: 'AKHD Media',
+    category: 'Media & Entertainment Platform',
+    url: 'https://www.akhdmedia.com',
+    tech: 'MERN Stack, Amazon S3, AWS Cloud Hosting',
+    summary: 'High-speed media streaming and content distribution platform with cloud storage optimization.'
+  },
+  {
     name: 'Aanvitha Technologies',
     category: 'Enterprise AI & SaaS',
     url: 'https://www.aanvitha.tech',
     tech: 'React 19, JavaScript, Vite, CSS3, Google Gemini API, Webhooks, CSV',
     summary: 'A premier corporate platform featuring 22+ enterprise software solutions and an intelligent streaming Gemini AI chatbot for 24/7 client engagement.'
+  },
+  {
+    name: 'Sequel IVF',
+    category: 'Healthcare & Fertility Clinic',
+    url: 'https://sequelivf.com/',
+    tech: 'React.js, JavaScript, CSS3, Appointment Booking, WhatsApp API',
+    summary: 'Live fertility clinic website for Sequel IVF in Hadapsar, Pune — services, doctor profiles, appointment booking, and patient enquiry flows at https://sequelivf.com/.'
   },
   {
     name: 'RestroBazaar',
@@ -99,18 +113,11 @@ export const PROJECTS_LIST = [
     summary: 'Comprehensive multi-vendor food and restaurant supply marketplace with vendor portals, client dashboard, and inventory management.'
   },
   {
-    name: 'AKHD Media',
-    category: 'Media & Entertainment Platform',
-    url: 'https://www.akhdmedia.com',
-    tech: 'MERN Stack, Amazon S3, AWS Cloud Hosting',
-    summary: 'High-speed media streaming and content distribution platform with cloud storage optimization.'
-  },
-  {
-    name: 'Fashion-Cart',
-    category: 'Fashion E-Commerce',
-    url: 'https://www.fashion-cart.in/',
+    name: 'Orvanta',
+    category: 'Multi-Category E-Commerce',
+    url: 'https://www.orvantaent.site/',
     tech: 'React.js, Node.js, Express.js, MongoDB, Stripe, AWS',
-    summary: 'Modern fashion storefront featuring dynamic cart synchronization, Stripe payments, and admin order tracking.'
+    summary: 'Live multi-category shopping platform (fashion, electronics, beauty) with cart, payments, and order tracking at https://www.orvantaent.site/.'
   },
   {
     name: 'Dynamic World',
@@ -146,6 +153,13 @@ export const PROJECTS_LIST = [
     url: 'https://github.com/Rishikesh5577/Ocean-Plastic-Waste-Detection.git',
     tech: 'Python, YOLOv8, OpenCV, Deep Learning, React.js',
     summary: 'Automated maritime waste identification leveraging state-of-the-art YOLOv8 object detection algorithms.'
+  },
+  {
+    name: 'RouteHelp',
+    category: 'Logistics & Fleet Route Planner',
+    url: 'https://routehelp.in/',
+    tech: 'React 19, Node.js, Express.js, MongoDB, MapLibre, OSRM, Socket.IO, AWS',
+    summary: 'Live delivery operations platform for dispatchers: fleet vehicles, stop geocoding, 2-Opt TSP road-route optimization, MapLibre maps, and real-time driver GPS tracking at https://routehelp.in/.'
   }
 ];
 

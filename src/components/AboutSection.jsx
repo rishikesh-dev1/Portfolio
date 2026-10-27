@@ -54,7 +54,7 @@ export default function AboutSection() {
                     Currently working as an Associate Software Developer at Gamotech Solutions Pvt. Ltd., I develop and maintain reusable React.js UI components, design and integrate RESTful APIs with Node.js & Express.js, and build AI agents and chatbot solutions with LLM APIs for automated business workflows and CRM operations.
                   </p>
                   <p className="tw-text-xl tw-mb-10">
-                    Previously at Infosys Springboard, I gained deep full-stack experience in end-to-end web applications, databases, and Git collaboration. Certified as an AWS Cloud Practitioner and winner at Amrut Expo 2025, I have successfully delivered live freelance platforms including RestroBazaar and AKHD Media.
+                    Previously at Infosys Springboard, I gained deep full-stack experience in end-to-end web applications, databases, and Git collaboration. Certified as an AWS Cloud Practitioner and winner at Amrut Expo 2025, I have successfully delivered live freelance platforms including AKHD Media, RouteHelp, and RestroBazaar.
                   </p>
                 </div>
                 <div className="about-three-counter d-inline-block">

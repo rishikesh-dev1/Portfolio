@@ -8,7 +8,7 @@ const AANVI_ROBOT_AVATAR =
 const INITIAL_MESSAGE = {
   id: 'welcome',
   role: 'model',
-  content: `Hello! 👋 I'm **Rishi AI**, your interactive guide for **Rishikesh Wakchaure** (Associate Software Developer & Full-Stack AI Engineer).\n\nFeel free to ask me anything about Rishikesh's **AI solutions, live production projects (Aanvitha Tech, RestroBazaar), tech stack, experience**, or how to get in touch!`,
+  content: `Hello! 👋 I'm **Rishi AI**, your interactive guide for **Rishikesh Wakchaure** (Associate Software Developer & Full-Stack AI Engineer).\n\nFeel free to ask me anything about Rishikesh's **AI solutions, live production projects (AKHD Media, RouteHelp, Aanvitha Tech), tech stack, experience**, or how to get in touch!`,
   timestamp: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
 };
 
