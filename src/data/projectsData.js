@@ -21,7 +21,7 @@ export const projectsData = [
     tags: ['React 19', 'JavaScript', 'Vite', 'CSS3', 'Google Gemini API', 'Webhooks', 'CSV'],
     liveUrl: 'https://www.aanvitha.tech',
     githubUrl: '',
-    img: 'https://res.cloudinary.com/dl6hpq7mm/image/upload/v1789108842/25ebee3a-9fce-4d70-bbd5-73e5113ba981.png',
+    img: 'https://res.cloudinary.com/dl6hpq7mm/image/upload/v1793107806/724ebb8f-ea76-4efd-9710-6f2c5326bb82.png',
     alt: 'Aanvitha Technologies — Enterprise AI, Fintech & SaaS Platform',
     featured: true,
   },

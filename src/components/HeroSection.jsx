@@ -8,7 +8,7 @@ export default function HeroSection() {
               <div className="banner-three-hero-stage position-relative">
                 <div className="banner-three-man position-absolute start-50 translate-middle-x">
                   <img
-                    src="/assets/images/shapes/hero-man.png?v=2"
+                    src="/assets/images/shapes/download-Photoroom.png"
                     alt="Rishikesh Wakchaure"
                   />
                 </div>
